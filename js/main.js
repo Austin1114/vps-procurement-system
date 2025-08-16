@@ -134,6 +134,41 @@ function setupInsightActions() {
  */
 function getModuleData(moduleId) {
     const moduleDataMap = {
+        // Research 模块
+        'team-collaboration': {
+            title: '团队协作',
+            icon: 'fas fa-users',
+            data: [
+                { id: 'TEAM001', projectName: '智能采购系统升级', teamLead: '张工程师', members: 8, status: '进行中', progress: 75, startDate: '2024-01-10', deadline: '2024-03-15', priority: '高', tasks: 24, completed: 18 },
+                { id: 'TEAM002', projectName: '供应商评估体系', teamLead: '李主管', members: 5, status: '计划中', progress: 15, startDate: '2024-02-01', deadline: '2024-04-30', priority: '中', tasks: 12, completed: 2 },
+                { id: 'TEAM003', projectName: '库存优化项目', teamLead: '王经理', members: 6, status: '进行中', progress: 60, startDate: '2023-12-15', deadline: '2024-02-28', priority: '高', tasks: 20, completed: 12 },
+                { id: 'TEAM004', projectName: '成本分析系统', teamLead: '赵分析师', members: 4, status: '已完成', progress: 100, startDate: '2023-11-01', deadline: '2024-01-15', priority: '中', tasks: 15, completed: 15 },
+                { id: 'TEAM005', projectName: '物流跟踪优化', teamLead: '陈总监', members: 7, status: '进行中', progress: 40, startDate: '2024-01-20', deadline: '2024-05-10', priority: '中', tasks: 18, completed: 7 }
+            ]
+        },
+        'production-management': {
+            title: '生产管理',
+            icon: 'fas fa-industry',
+            data: [
+                { id: 'PROD001', productLine: '电子产品组装线', manager: '刘车间主任', capacity: '500台/日', currentOutput: '420台/日', efficiency: '84%', status: '正常运行', shift: '三班制', workers: 45, target: '500台/日' },
+                { id: 'PROD002', productLine: '机械零件加工线', manager: '周技术员', capacity: '200件/日', currentOutput: '180件/日', efficiency: '90%', status: '正常运行', shift: '两班制', workers: 32, target: '200件/日' },
+                { id: 'PROD003', productLine: '包装生产线', manager: '吴主管', capacity: '1000件/日', currentOutput: '750件/日', efficiency: '75%', status: '维护中', shift: '单班制', workers: 28, target: '1000件/日' },
+                { id: 'PROD004', productLine: '质检测试线', manager: '郑质检员', capacity: '300件/日', currentOutput: '280件/日', efficiency: '93%', status: '正常运行', shift: '两班制', workers: 18, target: '300件/日' },
+                { id: 'PROD005', productLine: '原料预处理线', manager: '孙工程师', capacity: '800kg/日', currentOutput: '720kg/日', efficiency: '90%', status: '正常运行', shift: '三班制', workers: 24, target: '800kg/日' }
+            ]
+        },
+        'project-tasks': {
+            title: '项目任务',
+            icon: 'fas fa-clipboard-list',
+            data: [
+                { id: 'TASK001', taskName: '供应商资质审核', project: '智能采购系统升级', assignee: '张审核员', priority: '高', status: '进行中', progress: 70, startDate: '2024-01-15', dueDate: '2024-01-30', estimatedHours: 40, actualHours: 28 },
+                { id: 'TASK002', taskName: '系统接口开发', project: '智能采购系统升级', assignee: '李开发工程师', priority: '高', status: '进行中', progress: 85, startDate: '2024-01-10', dueDate: '2024-02-05', estimatedHours: 80, actualHours: 68 },
+                { id: 'TASK003', taskName: '数据库设计', project: '供应商评估体系', assignee: '王数据库管理员', priority: '中', status: '待开始', progress: 0, startDate: '2024-02-01', dueDate: '2024-02-20', estimatedHours: 60, actualHours: 0 },
+                { id: 'TASK004', taskName: '用户培训材料', project: '库存优化项目', assignee: '赵培训师', priority: '中', status: '已完成', progress: 100, startDate: '2024-01-05', dueDate: '2024-01-25', estimatedHours: 30, actualHours: 32 },
+                { id: 'TASK005', taskName: '性能测试', project: '成本分析系统', assignee: '陈测试工程师', priority: '高', status: '已完成', progress: 100, startDate: '2024-01-08', dueDate: '2024-01-18', estimatedHours: 50, actualHours: 48 }
+            ]
+        },
+        // Procurement 模块
         'supplier-management': {
             title: '供应商管理',
             icon: 'fas fa-handshake',
@@ -145,26 +180,15 @@ function getModuleData(moduleId) {
                 { id: 'SUP005', name: '美的集团', category: '办公设备', rating: 4.5, status: '活跃', contact: '陈主管', phone: '135-0017-5555', email: 'chen@midea.com', orders: 22, amount: '¥650,000' }
             ]
         },
-        'order-processing': {
-            title: '订单处理',
-            icon: 'fas fa-shopping-basket',
+        'performance-evaluation': {
+            title: '绩效评估',
+            icon: 'fas fa-chart-line',
             data: [
-                { id: 'PO2024001', supplier: '华为技术有限公司', items: 'ThinkPad X1 Carbon 笔记本电脑', quantity: 50, unitPrice: '¥8,500', totalAmount: '¥425,000', status: '已确认', orderDate: '2024-01-15', deliveryDate: '2024-01-25', progress: 75 },
-                { id: 'PO2024002', supplier: '中石化润滑油', items: '工业润滑油 5L装', quantity: 200, unitPrice: '¥180', totalAmount: '¥36,000', status: '处理中', orderDate: '2024-01-18', deliveryDate: '2024-01-28', progress: 45 },
-                { id: 'PO2024003', supplier: '三一重工', items: '挖掘机配件套装', quantity: 5, unitPrice: '¥25,000', totalAmount: '¥125,000', status: '待审批', orderDate: '2024-01-20', deliveryDate: '2024-02-05', progress: 20 },
-                { id: 'PO2024004', supplier: '美的集团', items: '办公空调 3匹立式', quantity: 15, unitPrice: '¥4,200', totalAmount: '¥63,000', status: '已发货', orderDate: '2024-01-12', deliveryDate: '2024-01-22', progress: 90 },
-                { id: 'PO2024005', supplier: '联想集团', items: 'ThinkCentre 台式机', quantity: 30, unitPrice: '¥5,800', totalAmount: '¥174,000', status: '已完成', orderDate: '2024-01-08', deliveryDate: '2024-01-18', progress: 100 }
-            ]
-        },
-        'inventory-forecast': {
-            title: '库存预测',
-            icon: 'fas fa-warehouse',
-            data: [
-                { item: '办公用纸 A4', currentStock: 2500, safetyStock: 1000, forecastDemand: 800, reorderPoint: 1200, status: '正常', trend: '稳定', nextOrderDate: '2024-02-15', suggestedQuantity: 3000 },
-                { item: '打印机墨盒 HP', currentStock: 45, safetyStock: 50, forecastDemand: 25, reorderPoint: 75, status: '低库存', trend: '下降', nextOrderDate: '2024-01-25', suggestedQuantity: 100 },
-                { item: '工业润滑油', currentStock: 180, safetyStock: 100, forecastDemand: 60, reorderPoint: 160, status: '正常', trend: '上升', nextOrderDate: '2024-02-10', suggestedQuantity: 200 },
-                { item: '安全帽', currentStock: 25, safetyStock: 30, forecastDemand: 15, reorderPoint: 45, status: '紧急', trend: '稳定', nextOrderDate: '2024-01-22', suggestedQuantity: 80 },
-                { item: '电脑配件', currentStock: 120, safetyStock: 80, forecastDemand: 40, reorderPoint: 120, status: '正常', trend: '稳定', nextOrderDate: '2024-02-20', suggestedQuantity: 150 }
+                { supplier: '华为技术有限公司', period: '2024年1月', deliveryScore: 95, qualityScore: 98, priceScore: 85, serviceScore: 92, overallScore: 92.5, rank: 1, improvement: '+2.3%', issues: 0 },
+                { supplier: '联想集团', period: '2024年1月', deliveryScore: 88, qualityScore: 94, priceScore: 90, serviceScore: 89, overallScore: 90.3, rank: 2, improvement: '+1.8%', issues: 1 },
+                { supplier: '中石化润滑油', period: '2024年1月', deliveryScore: 92, qualityScore: 96, priceScore: 88, serviceScore: 85, overallScore: 90.3, rank: 3, improvement: '-0.5%', issues: 0 },
+                { supplier: '美的集团', period: '2024年1月', deliveryScore: 85, qualityScore: 90, priceScore: 92, serviceScore: 88, overallScore: 88.8, rank: 4, improvement: '+3.2%', issues: 2 },
+                { supplier: '三一重工', period: '2024年1月', deliveryScore: 78, qualityScore: 85, priceScore: 80, serviceScore: 82, overallScore: 81.3, rank: 5, improvement: '-5.1%', issues: 3 }
             ]
         },
         'contract-management': {
@@ -178,6 +202,74 @@ function getModuleData(moduleId) {
                 { id: 'CT2023020', supplier: '联想集团', title: 'IT设备租赁合同', value: '¥2,400,000', startDate: '2023-09-01', endDate: '2024-08-31', status: '执行中', renewalDate: '2024-06-01', terms: '电脑设备租赁服务' }
             ]
         },
+        'order-processing': {
+            title: '订单处理',
+            icon: 'fas fa-shopping-basket',
+            data: [
+                { id: 'PO2024001', supplier: '华为技术有限公司', items: 'ThinkPad X1 Carbon 笔记本电脑', quantity: 50, unitPrice: '¥8,500', totalAmount: '¥425,000', status: '已确认', orderDate: '2024-01-15', deliveryDate: '2024-01-25', progress: 75 },
+                { id: 'PO2024002', supplier: '中石化润滑油', items: '工业润滑油 5L装', quantity: 200, unitPrice: '¥180', totalAmount: '¥36,000', status: '处理中', orderDate: '2024-01-18', deliveryDate: '2024-01-28', progress: 45 },
+                { id: 'PO2024003', supplier: '三一重工', items: '挖掘机配件套装', quantity: 5, unitPrice: '¥25,000', totalAmount: '¥125,000', status: '待审批', orderDate: '2024-01-20', deliveryDate: '2024-02-05', progress: 20 },
+                { id: 'PO2024004', supplier: '美的集团', items: '办公空调 3匹立式', quantity: 15, unitPrice: '¥4,200', totalAmount: '¥63,000', status: '已发货', orderDate: '2024-01-12', deliveryDate: '2024-01-22', progress: 90 },
+                { id: 'PO2024005', supplier: '联想集团', items: 'ThinkCentre 台式机', quantity: 30, unitPrice: '¥5,800', totalAmount: '¥174,000', status: '已完成', orderDate: '2024-01-08', deliveryDate: '2024-01-18', progress: 100 }
+            ]
+        },
+        // Planning 模块
+        'procurement-planning': {
+            title: '采购计划',
+            icon: 'fas fa-calendar-alt',
+            data: [
+                { id: 'PLAN001', planName: '2024年Q1 IT设备采购计划', category: 'IT设备', budget: '¥3,500,000', allocated: '¥2,800,000', remaining: '¥700,000', status: '执行中', startDate: '2024-01-01', endDate: '2024-03-31', progress: 80, items: 15 },
+                { id: 'PLAN002', planName: '办公用品年度采购计划', category: '办公用品', budget: '¥800,000', allocated: '¥320,000', remaining: '¥480,000', status: '计划中', startDate: '2024-02-01', endDate: '2024-12-31', progress: 40, items: 25 },
+                { id: 'PLAN003', planName: '工业原料季度采购计划', category: '工业原料', budget: '¥2,200,000', allocated: '¥1,650,000', remaining: '¥550,000', status: '执行中', startDate: '2024-01-15', endDate: '2024-04-15', progress: 75, items: 12 },
+                { id: 'PLAN004', planName: '设备维护采购计划', category: '维护服务', budget: '¥1,500,000', allocated: '¥900,000', remaining: '¥600,000', status: '执行中', startDate: '2023-12-01', endDate: '2024-06-01', progress: 60, items: 8 },
+                { id: 'PLAN005', planName: '安全防护用品采购计划', category: '安全用品', budget: '¥600,000', allocated: '¥150,000', remaining: '¥450,000', status: '待审批', startDate: '2024-03-01', endDate: '2024-08-31', progress: 25, items: 20 }
+            ]
+        },
+        'supplier-catalog': {
+            title: '供应商目录',
+            icon: 'fas fa-book',
+            data: [
+                { catalogId: 'CAT001', supplier: '华为技术有限公司', category: 'IT设备', itemCount: 156, lastUpdate: '2024-01-20', priceValidity: '2024-06-30', discount: '5-15%', certification: 'ISO9001', status: '有效' },
+                { catalogId: 'CAT002', supplier: '联想集团', category: 'IT设备', itemCount: 89, lastUpdate: '2024-01-18', priceValidity: '2024-05-31', discount: '8-12%', certification: 'ISO9001', status: '有效' },
+                { catalogId: 'CAT003', supplier: '中石化润滑油', category: '工业用品', itemCount: 45, lastUpdate: '2024-01-15', priceValidity: '2024-07-15', discount: '3-8%', certification: 'ISO14001', status: '有效' },
+                { catalogId: 'CAT004', supplier: '三一重工', category: '机械设备', itemCount: 78, lastUpdate: '2023-12-20', priceValidity: '2024-03-20', discount: '10-20%', certification: 'CE认证', status: '即将过期' },
+                { catalogId: 'CAT005', supplier: '美的集团', category: '办公设备', itemCount: 34, lastUpdate: '2024-01-22', priceValidity: '2024-08-22', discount: '6-10%', certification: '3C认证', status: '有效' }
+            ]
+        },
+        'arrival-planning': {
+            title: '到货计划',
+            icon: 'fas fa-truck-loading',
+            data: [
+                { id: 'ARR001', orderNo: 'PO2024001', supplier: '华为技术有限公司', items: 'ThinkPad笔记本电脑 x50', scheduledDate: '2024-01-25', actualDate: '2024-01-25', status: '已到货', warehouse: 'A区-01', inspector: '张检验员', documents: '齐全' },
+                { id: 'ARR002', orderNo: 'PO2024002', supplier: '中石化润滑油', items: '工业润滑油 x200桶', scheduledDate: '2024-01-28', actualDate: '-', status: '运输中', warehouse: 'B区-03', inspector: '李检验员', documents: '待确认' },
+                { id: 'ARR003', orderNo: 'PO2024004', supplier: '美的集团', items: '办公空调 x15台', scheduledDate: '2024-01-22', actualDate: '2024-01-22', status: '已到货', warehouse: 'C区-05', inspector: '王检验员', documents: '齐全' },
+                { id: 'ARR004', orderNo: 'PO2024003', supplier: '三一重工', items: '挖掘机配件套装 x5', scheduledDate: '2024-02-05', actualDate: '-', status: '待发货', warehouse: 'D区-02', inspector: '赵检验员', documents: '准备中' },
+                { id: 'ARR005', orderNo: 'PO2024005', supplier: '联想集团', items: 'ThinkCentre台式机 x30', scheduledDate: '2024-01-18', actualDate: '2024-01-18', status: '已到货', warehouse: 'A区-02', inspector: '陈检验员', documents: '齐全' }
+            ]
+        },
+        'inventory-forecast': {
+            title: '库存预测',
+            icon: 'fas fa-warehouse',
+            data: [
+                { item: '办公用纸 A4', currentStock: 2500, safetyStock: 1000, forecastDemand: 800, reorderPoint: 1200, status: '正常', trend: '稳定', nextOrderDate: '2024-02-15', suggestedQuantity: 3000 },
+                { item: '打印机墨盒 HP', currentStock: 45, safetyStock: 50, forecastDemand: 25, reorderPoint: 75, status: '低库存', trend: '下降', nextOrderDate: '2024-01-25', suggestedQuantity: 100 },
+                { item: '工业润滑油', currentStock: 180, safetyStock: 100, forecastDemand: 60, reorderPoint: 160, status: '正常', trend: '上升', nextOrderDate: '2024-02-10', suggestedQuantity: 200 },
+                { item: '安全帽', currentStock: 25, safetyStock: 30, forecastDemand: 15, reorderPoint: 45, status: '紧急', trend: '稳定', nextOrderDate: '2024-01-22', suggestedQuantity: 80 },
+                { item: '电脑配件', currentStock: 120, safetyStock: 80, forecastDemand: 40, reorderPoint: 120, status: '正常', trend: '稳定', nextOrderDate: '2024-02-20', suggestedQuantity: 150 }
+            ]
+        },
+        // Logistics 模块
+        'logistics-procurement': {
+            title: '物流采购',
+            icon: 'fas fa-shipping-fast',
+            data: [
+                { id: 'LOG001', serviceProvider: '顺丰速运', serviceType: '快递服务', route: '北京-上海', price: '¥25/kg', contract: 'CT-LOG-001', volume: '500件/月', rating: 4.8, status: '活跃', lastUsed: '2024-01-23' },
+                { id: 'LOG002', serviceProvider: '德邦物流', serviceType: '零担运输', route: '广州-武汉', price: '¥180/吨', contract: 'CT-LOG-002', volume: '200吨/月', rating: 4.6, status: '活跃', lastUsed: '2024-01-22' },
+                { id: 'LOG003', serviceProvider: '中通快递', serviceType: '快递服务', route: '深圳-北京', price: '¥22/kg', contract: 'CT-LOG-003', volume: '800件/月', rating: 4.5, status: '活跃', lastUsed: '2024-01-24' },
+                { id: 'LOG004', serviceProvider: '安能物流', serviceType: '整车运输', route: '上海-成都', price: '¥3500/车', contract: 'CT-LOG-004', volume: '50车/月', rating: 4.4, status: '暂停', lastUsed: '2024-01-15' },
+                { id: 'LOG005', serviceProvider: '京东物流', serviceType: '仓储配送', route: '全国配送', price: '¥8/件', contract: 'CT-LOG-005', volume: '1200件/月', rating: 4.7, status: '活跃', lastUsed: '2024-01-24' }
+            ]
+        },
         'logistics-tracking': {
             title: '物流跟踪',
             icon: 'fas fa-map-marker-alt',
@@ -189,6 +281,18 @@ function getModuleData(moduleId) {
                 { trackingNo: 'JD8888999900', supplier: '联想集团', items: 'ThinkCentre台式机 x30', status: '配送中', currentLocation: '本地配送站', estimatedDelivery: '今日 18:00', progress: 85, route: ['北京仓库', '本地分拣', '配送站', '配送中'] }
             ]
         },
+        'payment-processing': {
+            title: '支付处理',
+            icon: 'fas fa-credit-card',
+            data: [
+                { id: 'PAY001', orderNo: 'PO2024001', supplier: '华为技术有限公司', amount: '¥425,000', paymentMethod: '银行转账', status: '已支付', requestDate: '2024-01-20', approvalDate: '2024-01-22', paymentDate: '2024-01-23', approver: '财务经理' },
+                { id: 'PAY002', orderNo: 'PO2024002', supplier: '中石化润滑油', amount: '¥36,000', paymentMethod: '银行转账', status: '待审批', requestDate: '2024-01-24', approvalDate: '-', paymentDate: '-', approver: '待分配' },
+                { id: 'PAY003', orderNo: 'PO2024004', supplier: '美的集团', amount: '¥63,000', paymentMethod: '银行转账', status: '已支付', requestDate: '2024-01-18', approvalDate: '2024-01-19', paymentDate: '2024-01-20', approver: '财务经理' },
+                { id: 'PAY004', orderNo: 'PO2024003', supplier: '三一重工', amount: '¥125,000', paymentMethod: '银行转账', status: '审批中', requestDate: '2024-01-23', approvalDate: '-', paymentDate: '-', approver: '财务总监' },
+                { id: 'PAY005', orderNo: 'PO2024005', supplier: '联想集团', amount: '¥174,000', paymentMethod: '银行转账', status: '已支付', requestDate: '2024-01-15', approvalDate: '2024-01-16', paymentDate: '2024-01-17', approver: '财务经理' }
+            ]
+        },
+        // Finance 模块
         'reconciliation': {
             title: '财务对账',
             icon: 'fas fa-balance-scale',
@@ -198,6 +302,39 @@ function getModuleData(moduleId) {
                 { period: '2024年1月', supplier: '美的集团', invoiceAmount: '¥63,000', paidAmount: '¥63,000', difference: '¥0', status: '已对账', reconcileDate: '2024-01-28', notes: '对账完成' },
                 { period: '2023年12月', supplier: '三一重工', invoiceAmount: '¥125,000', paidAmount: '¥120,000', difference: '¥5,000', status: '处理中', reconcileDate: '2024-01-15', notes: '质量扣款，协商中' },
                 { period: '2024年1月', supplier: '联想集团', invoiceAmount: '¥174,000', paidAmount: '¥174,000', difference: '¥0', status: '已对账', reconcileDate: '2024-01-25', notes: '按期对账完成' }
+            ]
+        },
+        'invoicing': {
+            title: '发票管理',
+            icon: 'fas fa-file-invoice-dollar',
+            data: [
+                { invoiceNo: 'INV2024001', supplier: '华为技术有限公司', orderNo: 'PO2024001', amount: '¥425,000', taxAmount: '¥55,250', totalAmount: '¥480,250', issueDate: '2024-01-20', dueDate: '2024-02-19', status: '已收票', type: '增值税专用发票' },
+                { invoiceNo: 'INV2024002', supplier: '中石化润滑油', orderNo: 'PO2024002', amount: '¥36,000', taxAmount: '¥4,680', totalAmount: '¥40,680', issueDate: '2024-01-22', dueDate: '2024-02-21', status: '待收票', type: '增值税专用发票' },
+                { invoiceNo: 'INV2024003', supplier: '美的集团', orderNo: 'PO2024004', amount: '¥63,000', taxAmount: '¥8,190', totalAmount: '¥71,190', issueDate: '2024-01-18', dueDate: '2024-02-17', status: '已收票', type: '增值税专用发票' },
+                { invoiceNo: 'INV2024004', supplier: '三一重工', orderNo: 'PO2024003', amount: '¥125,000', taxAmount: '¥16,250', totalAmount: '¥141,250', issueDate: '2024-01-25', dueDate: '2024-02-24', status: '待开票', type: '增值税专用发票' },
+                { invoiceNo: 'INV2024005', supplier: '联想集团', orderNo: 'PO2024005', amount: '¥174,000', taxAmount: '¥22,620', totalAmount: '¥196,620', issueDate: '2024-01-16', dueDate: '2024-02-15', status: '已收票', type: '增值税专用发票' }
+            ]
+        },
+        'capital-planning': {
+            title: '资本规划',
+            icon: 'fas fa-chart-pie',
+            data: [
+                { id: 'CAP001', projectName: '智能制造设备升级', category: '设备投资', budgetYear: '2024', totalBudget: '¥15,000,000', allocatedBudget: '¥8,500,000', usedBudget: '¥3,200,000', remainingBudget: '¥11,800,000', status: '执行中', roi: '18.5%', paybackPeriod: '3.2年' },
+                { id: 'CAP002', projectName: 'IT基础设施建设', category: 'IT投资', budgetYear: '2024', totalBudget: '¥8,000,000', allocatedBudget: '¥6,000,000', usedBudget: '¥2,800,000', remainingBudget: '¥5,200,000', status: '执行中', roi: '22.3%', paybackPeriod: '2.8年' },
+                { id: 'CAP003', projectName: '仓储物流中心扩建', category: '基建投资', budgetYear: '2024', totalBudget: '¥25,000,000', allocatedBudget: '¥12,000,000', usedBudget: '¥4,500,000', remainingBudget: '¥20,500,000', status: '计划中', roi: '15.2%', paybackPeriod: '4.1年' },
+                { id: 'CAP004', projectName: '研发实验室建设', category: '研发投资', budgetYear: '2024', totalBudget: '¥12,000,000', allocatedBudget: '¥8,000,000', usedBudget: '¥3,500,000', remainingBudget: '¥8,500,000', status: '执行中', roi: '25.8%', paybackPeriod: '2.5年' },
+                { id: 'CAP005', projectName: '环保设施改造', category: '环保投资', budgetYear: '2024', totalBudget: '¥6,000,000', allocatedBudget: '¥4,500,000', usedBudget: '¥1,800,000', remainingBudget: '¥4,200,000', status: '执行中', roi: '12.5%', paybackPeriod: '5.2年' }
+            ]
+        },
+        'payment-processing-finance': {
+            title: '财务支付处理',
+            icon: 'fas fa-money-bill-wave',
+            data: [
+                { id: 'FPAY001', paymentType: '供应商付款', recipient: '华为技术有限公司', amount: '¥425,000', currency: 'CNY', method: '银行转账', status: '已完成', initiatedBy: '采购部', approvedBy: '财务经理', processedDate: '2024-01-23', reference: 'PO2024001' },
+                { id: 'FPAY002', paymentType: '员工报销', recipient: '张工程师', amount: '¥3,500', currency: 'CNY', method: '银行转账', status: '待审批', initiatedBy: '人事部', approvedBy: '待分配', processedDate: '-', reference: 'EXP2024001' },
+                { id: 'FPAY003', paymentType: '税费缴纳', recipient: '国家税务局', amount: '¥85,000', currency: 'CNY', method: '网银支付', status: '已完成', initiatedBy: '财务部', approvedBy: '财务总监', processedDate: '2024-01-20', reference: 'TAX2024001' },
+                { id: 'FPAY004', paymentType: '服务费支付', recipient: '德勤咨询', amount: '¥120,000', currency: 'CNY', method: '银行转账', status: '审批中', initiatedBy: '战略部', approvedBy: '总经理', processedDate: '-', reference: 'SRV2024001' },
+                { id: 'FPAY005', paymentType: '供应商付款', recipient: '美的集团', amount: '¥63,000', currency: 'CNY', method: '银行转账', status: '已完成', initiatedBy: '采购部', approvedBy: '财务经理', processedDate: '2024-01-20', reference: 'PO2024004' }
             ]
         }
     };
@@ -425,6 +562,146 @@ function getReconciliationStatusClass(status) {
         '已对账': 'status-reconciled',
         '有差异': 'status-difference',
         '处理中': 'status-processing'
+    };
+    return statusMap[status] || 'status-default';
+}
+
+/**
+ * Get CSS class for project status
+ */
+function getProjectStatusClass(status) {
+    const statusMap = {
+        '已完成': 'status-completed',
+        '进行中': 'status-active',
+        '计划中': 'status-pending',
+        '暂停': 'status-inactive'
+    };
+    return statusMap[status] || 'status-default';
+}
+
+/**
+ * Get CSS class for production status
+ */
+function getProductionStatusClass(status) {
+    const statusMap = {
+        '正常运行': 'status-active',
+        '维护中': 'status-warning',
+        '停机': 'status-inactive'
+    };
+    return statusMap[status] || 'status-default';
+}
+
+/**
+ * Get CSS class for task status
+ */
+function getTaskStatusClass(status) {
+    const statusMap = {
+        '已完成': 'status-completed',
+        '进行中': 'status-active',
+        '待开始': 'status-pending',
+        '已延期': 'status-warning'
+    };
+    return statusMap[status] || 'status-default';
+}
+
+/**
+ * Get CSS class for priority
+ */
+function getPriorityClass(priority) {
+    const priorityMap = {
+        '高': 'priority-high',
+        '中': 'priority-medium',
+        '低': 'priority-low'
+    };
+    return priorityMap[priority] || 'priority-default';
+}
+
+/**
+ * Get CSS class for plan status
+ */
+function getPlanStatusClass(status) {
+    const statusMap = {
+        '执行中': 'status-active',
+        '计划中': 'status-pending',
+        '已完成': 'status-completed',
+        '待审批': 'status-warning'
+    };
+    return statusMap[status] || 'status-default';
+}
+
+/**
+ * Get CSS class for catalog status
+ */
+function getCatalogStatusClass(status) {
+    const statusMap = {
+        '有效': 'status-active',
+        '即将过期': 'status-warning',
+        '已过期': 'status-inactive'
+    };
+    return statusMap[status] || 'status-default';
+}
+
+/**
+ * Get CSS class for arrival status
+ */
+function getArrivalStatusClass(status) {
+    const statusMap = {
+        '已到货': 'status-completed',
+        '运输中': 'status-active',
+        '待发货': 'status-pending',
+        '延期': 'status-warning'
+    };
+    return statusMap[status] || 'status-default';
+}
+
+/**
+ * Get CSS class for payment status
+ */
+function getPaymentStatusClass(status) {
+    const statusMap = {
+        '已支付': 'status-completed',
+        '审批中': 'status-processing',
+        '待审批': 'status-pending',
+        '已拒绝': 'status-inactive'
+    };
+    return statusMap[status] || 'status-default';
+}
+
+/**
+ * Get CSS class for invoice status
+ */
+function getInvoiceStatusClass(status) {
+    const statusMap = {
+        '已收票': 'status-completed',
+        '待收票': 'status-pending',
+        '待开票': 'status-warning',
+        '已作废': 'status-inactive'
+    };
+    return statusMap[status] || 'status-default';
+}
+
+/**
+ * Get CSS class for capital status
+ */
+function getCapitalStatusClass(status) {
+    const statusMap = {
+        '执行中': 'status-active',
+        '计划中': 'status-pending',
+        '已完成': 'status-completed',
+        '暂停': 'status-inactive'
+    };
+    return statusMap[status] || 'status-default';
+}
+
+/**
+ * Get CSS class for finance payment status
+ */
+function getFinancePaymentStatusClass(status) {
+    const statusMap = {
+        '已完成': 'status-completed',
+        '审批中': 'status-processing',
+        '待审批': 'status-pending',
+        '已拒绝': 'status-inactive'
     };
     return statusMap[status] || 'status-default';
 }
