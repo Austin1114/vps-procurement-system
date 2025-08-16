@@ -91,6 +91,150 @@ body {
     font-size: 0.8rem;
 }
 
+/* Language Switcher Styles */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.language-switcher label {
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.language-select {
+    background-color: var(--secondary-color);
+    color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    min-width: 120px;
+}
+
+.language-select:hover {
+    background-color: var(--accent-color);
+}
+
+.language-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
+}
+
+.language-select option {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.5rem;
+}
+
+/* RTL Language Support */
+[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .header {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .logo {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .logo img {
+    margin-right: 0;
+    margin-left: 1rem;
+}
+
+[dir="rtl"] .user-menu {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .user-name {
+    margin-right: 0;
+    margin-left: 0.8rem;
+}
+
+[dir="rtl"] .avatar {
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+
+[dir="rtl"] .language-switcher {
+    margin-right: 0;
+    margin-left: 1rem;
+}
+
+[dir="rtl"] .language-switcher label {
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+
+[dir="rtl"] .main-content {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .sidebar {
+    border-right: none;
+    border-left: 1px solid var(--border-color);
+}
+
+[dir="rtl"] .menu-item {
+    text-align: right;
+    padding-right: 1rem;
+    padding-left: 2rem;
+}
+
+[dir="rtl"] .menu-item i {
+    margin-right: 0;
+    margin-left: 0.8rem;
+}
+
+[dir="rtl"] .content {
+    text-align: right;
+}
+
+[dir="rtl"] .dashboard-stats {
+    direction: rtl;
+}
+
+[dir="rtl"] .stat-card {
+    text-align: right;
+}
+
+[dir="rtl"] .module-grid {
+    direction: rtl;
+}
+
+[dir="rtl"] .module-card {
+    text-align: right;
+}
+
+[dir="rtl"] .ai-assistant {
+    right: auto;
+    left: 2rem;
+}
+
+[dir="rtl"] .ai-dialog {
+    right: auto;
+    left: 0;
+    text-align: right;
+}
+
+/* Language transition effects */
+.fade-transition {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.fade-transition.show {
+    opacity: 1;
+}
+
 /* Main Content Layout */
 .main-content {
     display: flex;

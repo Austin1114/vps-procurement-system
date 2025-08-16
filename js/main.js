@@ -1,6 +1,12 @@
 // Main JavaScript for VPS Smart Procurement System
 
+// Global i18n instance
+let i18n;
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize internationalization first
+    initI18n();
+    
     // Initialize the application
     initApp();
     
@@ -13,6 +19,35 @@ document.addEventListener('DOMContentLoaded', function() {
     // Setup AI Assistant
     setupAIAssistant();
 });
+
+/**
+ * Initialize internationalization
+ */
+function initI18n() {
+    i18n = new I18n();
+    
+    // Setup language switcher
+    setupLanguageSwitcher();
+    
+    // Apply initial language (English by default)
+    i18n.updatePageLanguage();
+}
+
+/**
+ * Setup language switcher functionality
+ */
+function setupLanguageSwitcher() {
+    const languageSelect = document.getElementById('language-select');
+    if (languageSelect) {
+        languageSelect.addEventListener('change', function() {
+            const selectedLanguage = this.value;
+            i18n.setLanguage(selectedLanguage);
+        });
+        
+        // Set the select value to current language
+        languageSelect.value = i18n.getCurrentLanguage();
+    }
+}
 
 /**
  * Initialize the application
