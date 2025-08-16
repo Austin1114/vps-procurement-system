@@ -840,10 +840,13 @@ function reviewContracts() {
  * Initialize charts
  */
 function initCharts() {
-    console.log('Charts initialization skipped due to Chart.js loading issues');
-    // Skip chart initialization to avoid errors
-    // initSpendChart();
-    // initStatusChart();
+    console.log('Initializing dashboard charts...');
+    initSpendChart();
+    initStatusChart();
+    initTrendChart();
+    initPerformanceChart();
+    initInventoryChart();
+    initSavingsChart();
 }
 
 /**
@@ -857,7 +860,7 @@ function initSpendChart() {
     new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Raw Materials', 'Equipment', 'Services', 'Office Supplies', 'Logistics'],
+            labels: ['原材料', '设备采购', '服务外包', '办公用品', '物流运输'],
             datasets: [{
                 data: [45, 20, 15, 10, 10],
                 backgroundColor: [
@@ -867,7 +870,8 @@ function initSpendChart() {
                     '#e74c3c',
                     '#9b59b6'
                 ],
-                borderWidth: 1
+                borderWidth: 2,
+                hoverBorderWidth: 3
             }]
         },
         options: {
@@ -875,8 +879,23 @@ function initSpendChart() {
             maintainAspectRatio: false,
             plugins: {
                 legend: {
-                    position: 'right'
+                    position: 'right',
+                    labels: {
+                        padding: 20,
+                        usePointStyle: true
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.label + ': ' + context.parsed + '%';
+                        }
+                    }
                 }
+            },
+            animation: {
+                animateRotate: true,
+                duration: 1000
             }
         }
     });
@@ -893,21 +912,379 @@ function initStatusChart() {
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Pending', 'Processing', 'Shipped', 'Delivered', 'Cancelled'],
+            labels: ['待审批', '处理中', '已发货', '已完成', '已取消'],
             datasets: [{
-                label: 'Number of Orders',
+                label: '订单数量',
                 data: [25, 40, 30, 50, 5],
-                backgroundColor: '#3498db',
-                borderWidth: 1
+                backgroundColor: [
+                    '#f39c12',
+                    '#3498db',
+                    '#2ecc71',
+                    '#27ae60',
+                    '#e74c3c'
+                ],
+                borderColor: [
+                    '#e67e22',
+                    '#2980b9',
+                    '#27ae60',
+                    '#229954',
+                    '#c0392b'
+                ],
+                borderWidth: 2,
+                borderRadius: 4
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.dataset.label + ': ' + context.parsed.y + ' 个订单';
+                        }
+                    }
+                }
+            },
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    grid: {
+                        color: '#e9ecef'
+                    },
+                    ticks: {
+                        color: '#6c757d'
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        color: '#6c757d'
+                    }
                 }
+            },
+            animation: {
+                duration: 1000,
+                easing: 'easeInOutQuart'
+            }
+        }
+    });
+}
+
+/**
+ * Initialize monthly trend chart
+ */
+function initTrendChart() {
+    const ctx = document.getElementById('trend-chart');
+    
+    if (!ctx) return;
+    
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月'],
+            datasets: [{
+                label: '采购金额 (万元)',
+                data: [120, 135, 128, 145, 152, 148, 165, 158],
+                borderColor: '#3498db',
+                backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                borderWidth: 3,
+                fill: true,
+                tension: 0.4,
+                pointBackgroundColor: '#3498db',
+                pointBorderColor: '#ffffff',
+                pointBorderWidth: 2,
+                pointRadius: 6,
+                pointHoverRadius: 8
+            }, {
+                label: '节约金额 (万元)',
+                data: [8, 12, 10, 15, 18, 14, 22, 20],
+                borderColor: '#2ecc71',
+                backgroundColor: 'rgba(46, 204, 113, 0.1)',
+                borderWidth: 3,
+                fill: true,
+                tension: 0.4,
+                pointBackgroundColor: '#2ecc71',
+                pointBorderColor: '#ffffff',
+                pointBorderWidth: 2,
+                pointRadius: 6,
+                pointHoverRadius: 8
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        usePointStyle: true,
+                        padding: 20
+                    }
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    titleColor: '#ffffff',
+                    bodyColor: '#ffffff'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: '#e9ecef'
+                    },
+                    ticks: {
+                        color: '#6c757d',
+                        callback: function(value) {
+                            return value + '万';
+                        }
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        color: '#6c757d'
+                    }
+                }
+            },
+            interaction: {
+                mode: 'nearest',
+                axis: 'x',
+                intersect: false
+            },
+            animation: {
+                duration: 1500,
+                easing: 'easeInOutQuart'
+            }
+        }
+    });
+}
+
+/**
+ * Initialize supplier performance chart
+ */
+function initPerformanceChart() {
+    const ctx = document.getElementById('performance-chart');
+    
+    if (!ctx) return;
+    
+    new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['交付及时性', '产品质量', '价格竞争力', '服务响应', '合规性', '创新能力'],
+            datasets: [{
+                label: '优秀供应商',
+                data: [90, 85, 78, 92, 88, 82],
+                borderColor: '#2ecc71',
+                backgroundColor: 'rgba(46, 204, 113, 0.2)',
+                borderWidth: 2,
+                pointBackgroundColor: '#2ecc71',
+                pointBorderColor: '#ffffff',
+                pointBorderWidth: 2
+            }, {
+                label: '平均水平',
+                data: [75, 70, 85, 68, 72, 65],
+                borderColor: '#f39c12',
+                backgroundColor: 'rgba(243, 156, 18, 0.2)',
+                borderWidth: 2,
+                pointBackgroundColor: '#f39c12',
+                pointBorderColor: '#ffffff',
+                pointBorderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        usePointStyle: true,
+                        padding: 20
+                    }
+                }
+            },
+            scales: {
+                r: {
+                    beginAtZero: true,
+                    max: 100,
+                    grid: {
+                        color: '#e9ecef'
+                    },
+                    angleLines: {
+                        color: '#e9ecef'
+                    },
+                    pointLabels: {
+                        color: '#6c757d',
+                        font: {
+                            size: 12
+                        }
+                    },
+                    ticks: {
+                        display: false
+                    }
+                }
+            },
+            animation: {
+                duration: 1200,
+                easing: 'easeInOutQuart'
+            }
+        }
+    });
+}
+
+/**
+ * Initialize inventory status chart
+ */
+function initInventoryChart() {
+    const ctx = document.getElementById('inventory-chart');
+    
+    if (!ctx) return;
+    
+    new Chart(ctx, {
+        type: 'polarArea',
+        data: {
+            labels: ['正常库存', '低库存预警', '紧急补货', '过量库存', '待入库'],
+            datasets: [{
+                data: [45, 25, 15, 10, 5],
+                backgroundColor: [
+                    'rgba(46, 204, 113, 0.8)',
+                    'rgba(243, 156, 18, 0.8)',
+                    'rgba(231, 76, 60, 0.8)',
+                    'rgba(155, 89, 182, 0.8)',
+                    'rgba(52, 152, 219, 0.8)'
+                ],
+                borderColor: [
+                    '#27ae60',
+                    '#e67e22',
+                    '#c0392b',
+                    '#8e44ad',
+                    '#2980b9'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'right',
+                    labels: {
+                        usePointStyle: true,
+                        padding: 15
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.label + ': ' + context.parsed + '%';
+                        }
+                    }
+                }
+            },
+            scales: {
+                r: {
+                    beginAtZero: true,
+                    grid: {
+                        color: '#e9ecef'
+                    },
+                    angleLines: {
+                        color: '#e9ecef'
+                    },
+                    ticks: {
+                        display: false
+                    }
+                }
+            },
+            animation: {
+                duration: 1000,
+                easing: 'easeInOutQuart'
+            }
+        }
+    });
+}
+
+/**
+ * Initialize cost savings chart
+ */
+function initSavingsChart() {
+    const ctx = document.getElementById('savings-chart');
+    
+    if (!ctx) return;
+    
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+            datasets: [{
+                label: '目标节约',
+                data: [50, 60, 55, 65],
+                backgroundColor: 'rgba(52, 152, 219, 0.6)',
+                borderColor: '#3498db',
+                borderWidth: 2
+            }, {
+                label: '实际节约',
+                data: [45, 58, 62, 70],
+                backgroundColor: 'rgba(46, 204, 113, 0.6)',
+                borderColor: '#2ecc71',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        usePointStyle: true,
+                        padding: 20
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.dataset.label + ': ' + context.parsed.y + '万元';
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: '#e9ecef'
+                    },
+                    ticks: {
+                        color: '#6c757d',
+                        callback: function(value) {
+                            return value + '万';
+                        }
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        color: '#6c757d'
+                    }
+                }
+            },
+            animation: {
+                duration: 1000,
+                easing: 'easeInOutQuart'
             }
         }
     });

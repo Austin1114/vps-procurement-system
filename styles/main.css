@@ -1146,3 +1146,50 @@ body {
     color: #721c24;
     border: 1px solid #f5c6cb;
 }
+
+/* Enhanced Chart Container Styles */
+.chart-container {
+    position: relative;
+    height: 300px;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container h3 {
+    margin: 0 0 15px 0;
+    color: #2c3e50;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.chart-container canvas {
+    max-height: 250px;
+    width: 100%;
+}
+
+/* Enhanced Dashboard Charts Layout */
+.dashboard-charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .dashboard-charts {
+        grid-template-columns: 1fr;
+    }
+    
+    .chart-container {
+        height: 250px;
+        padding: 15px;
+    }
+    
+    .chart-container canvas {
+        max-height: 200px;
+    }
+}
