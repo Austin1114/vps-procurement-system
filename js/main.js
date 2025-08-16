@@ -70,6 +70,9 @@ function setupLanguageSwitcher() {
             
             // Update button text to show selected language
             updateLanguageButtonText(selectedLanguage);
+            
+            // Reinitialize charts with new language
+            reinitializeCharts();
         });
     });
     
@@ -111,6 +114,36 @@ function initApp() {
     
     // Setup AI insight actions
     setupInsightActions();
+}
+
+/**
+ * Reinitialize charts with current language
+ */
+function reinitializeCharts() {
+    // Destroy existing charts
+    const chartElements = [
+        'spend-chart',
+        'status-chart', 
+        'trend-chart',
+        'performance-chart',
+        'inventory-chart',
+        'savings-chart'
+    ];
+    
+    chartElements.forEach(chartId => {
+        const canvas = document.getElementById(chartId);
+        if (canvas) {
+            const chart = Chart.getChart(canvas);
+            if (chart) {
+                chart.destroy();
+            }
+        }
+    });
+    
+    // Reinitialize charts with new language
+    setTimeout(() => {
+        initCharts();
+    }, 100);
 }
 
 /**
@@ -222,7 +255,7 @@ function getModuleData(moduleId) {
     const moduleDataMap = {
         // Research 模块
         'team-collaboration': {
-            title: '团队协作',
+            title: i18n.t('module.team_collaboration'),
             icon: 'fas fa-users',
             data: [
                 { id: 'TEAM001', projectName: 'VPS智慧采购系统升级', teamLead: '张云架构师', members: 8, status: '进行中', progress: 75, startDate: '2024-01-10', deadline: '2024-03-15', priority: '高', tasks: 24, completed: 18, department: '技术部', expertise: '云计算架构' },
@@ -235,7 +268,7 @@ function getModuleData(moduleId) {
             ]
         },
         'production-management': {
-            title: '生产管理',
+            title: i18n.t('module.production_management'),
             icon: 'fas fa-industry',
             data: [
                 { id: 'PROD001', productLine: '电子产品组装线', manager: '刘车间主任', capacity: '500台/日', currentOutput: '420台/日', efficiency: '84%', status: '正常运行', shift: '三班制', workers: 45, target: '500台/日' },
@@ -246,7 +279,7 @@ function getModuleData(moduleId) {
             ]
         },
         'project-tasks': {
-            title: '项目任务',
+            title: i18n.t('module.project_tasks'),
             icon: 'fas fa-clipboard-list',
             data: [
                 { id: 'TASK001', taskName: '供应商资质审核', project: '智能采购系统升级', assignee: '张审核员', priority: '高', status: '进行中', progress: 70, startDate: '2024-01-15', dueDate: '2024-01-30', estimatedHours: 40, actualHours: 28 },
@@ -258,7 +291,7 @@ function getModuleData(moduleId) {
         },
         // VPS产品展示模块
         'vps-products': {
-            title: 'VPS产品展示',
+            title: i18n.t('module.vps_products'),
             icon: 'fas fa-server',
             data: [
                 { id: 'VPS001', name: '阿里云ECS通用型', provider: '阿里云', cpu: '2核', memory: '4GB', storage: '40GB SSD', bandwidth: '5Mbps', os: 'CentOS 7.9', price: '¥89/月', region: '华东1(杭州)', status: '可用', rating: 4.8, features: ['弹性扩容', '快照备份', '安全组'] },
@@ -273,7 +306,7 @@ function getModuleData(moduleId) {
         },
         // Procurement 模块
         'supplier-management': {
-            title: '供应商管理',
+            title: i18n.t('module.supplier_management'),
             icon: 'fas fa-handshake',
             data: [
                 { id: 'SUP001', name: '阿里云计算有限公司', category: 'VPS云服务', rating: 4.8, status: '活跃', contact: '张云经理', phone: '138-0013-8888', email: 'zhang@aliyun.com', orders: 45, amount: '¥2,580,000' },
@@ -287,7 +320,7 @@ function getModuleData(moduleId) {
             ]
         },
         'performance-evaluation': {
-            title: '绩效评估',
+            title: i18n.t('module.performance_evaluation'),
             icon: 'fas fa-chart-line',
             data: [
                 { supplier: '华为技术有限公司', period: '2024年1月', deliveryScore: 95, qualityScore: 98, priceScore: 85, serviceScore: 92, overallScore: 92.5, rank: 1, improvement: '+2.3%', issues: 0 },
@@ -298,7 +331,7 @@ function getModuleData(moduleId) {
             ]
         },
         'contract-management': {
-            title: '合同管理',
+            title: i18n.t('module.contract_management'),
             icon: 'fas fa-file-contract',
             data: [
                 { id: 'CT2024001', supplier: '华为技术有限公司', title: 'IT设备年度采购合同', value: '¥5,200,000', startDate: '2024-01-01', endDate: '2024-12-31', status: '执行中', renewalDate: '2024-11-01', terms: '年度框架协议，分批交付' },
@@ -309,7 +342,7 @@ function getModuleData(moduleId) {
             ]
         },
         'order-processing': {
-            title: '订单处理',
+            title: i18n.t('module.order_processing'),
             icon: 'fas fa-shopping-basket',
             data: [
                 { id: 'PO2024001', supplier: '阿里云计算有限公司', items: 'ECS通用型 2核4GB VPS', quantity: 50, unitPrice: '¥89/月', totalAmount: '¥4,450/月', status: '已确认', orderDate: '2024-01-15', deliveryDate: '2024-01-25', progress: 75, duration: '12个月', region: '华东1(杭州)' },
@@ -323,7 +356,7 @@ function getModuleData(moduleId) {
         },
         // Planning 模块
         'procurement-planning': {
-            title: '采购计划',
+            title: i18n.t('module.procurement_planning'),
             icon: 'fas fa-calendar-alt',
             data: [
                 { id: 'PLAN001', planName: '2024年Q1云基础设施扩容计划', category: 'VPS云服务器', budget: '¥180,000', allocated: '¥144,000', remaining: '¥36,000', status: '执行中', startDate: '2024-01-01', endDate: '2024-03-31', progress: 80, items: 15, expectedSavings: '15%' },
@@ -335,7 +368,7 @@ function getModuleData(moduleId) {
             ]
         },
         'supplier-catalog': {
-            title: '供应商目录',
+            title: i18n.t('module.supplier_catalog'),
             icon: 'fas fa-book',
             data: [
                 { catalogId: 'CAT001', supplier: '华为技术有限公司', category: 'IT设备', itemCount: 156, lastUpdate: '2024-01-20', priceValidity: '2024-06-30', discount: '5-15%', certification: 'ISO9001', status: '有效' },
@@ -346,7 +379,7 @@ function getModuleData(moduleId) {
             ]
         },
         'arrival-planning': {
-            title: '到货计划',
+            title: i18n.t('module.arrival_planning'),
             icon: 'fas fa-truck-loading',
             data: [
                 { id: 'ARR001', orderNo: 'PO2024001', supplier: '华为技术有限公司', items: 'ThinkPad笔记本电脑 x50', scheduledDate: '2024-01-25', actualDate: '2024-01-25', status: '已到货', warehouse: 'A区-01', inspector: '张检验员', documents: '齐全' },
@@ -357,7 +390,7 @@ function getModuleData(moduleId) {
             ]
         },
         'inventory-forecast': {
-            title: '库存预测',
+            title: i18n.t('module.inventory_forecast'),
             icon: 'fas fa-warehouse',
             data: [
                 { item: '办公用纸 A4', currentStock: 2500, safetyStock: 1000, forecastDemand: 800, reorderPoint: 1200, status: '正常', trend: '稳定', nextOrderDate: '2024-02-15', suggestedQuantity: 3000 },
@@ -369,7 +402,7 @@ function getModuleData(moduleId) {
         },
         // Logistics 模块
         'logistics-procurement': {
-            title: '物流采购',
+            title: i18n.t('module.logistics_procurement'),
             icon: 'fas fa-shipping-fast',
             data: [
                 { id: 'LOG001', serviceProvider: '顺丰速运', serviceType: '快递服务', route: '北京-上海', price: '¥25/kg', contract: 'CT-LOG-001', volume: '500件/月', rating: 4.8, status: '活跃', lastUsed: '2024-01-23' },
@@ -380,7 +413,7 @@ function getModuleData(moduleId) {
             ]
         },
         'logistics-tracking': {
-            title: '物流跟踪',
+            title: i18n.t('module.logistics_tracking'),
             icon: 'fas fa-map-marker-alt',
             data: [
                 { trackingNo: 'SF1234567890', supplier: '华为技术有限公司', items: 'ThinkPad笔记本电脑 x50', status: '运输中', currentLocation: '北京分拨中心', estimatedDelivery: '2024-01-25 14:00', progress: 65, route: ['深圳发货', '广州中转', '武汉中转', '北京分拨中心', '目的地'] },
@@ -391,7 +424,7 @@ function getModuleData(moduleId) {
             ]
         },
         'payment-processing': {
-            title: '支付处理',
+            title: i18n.t('module.payment_processing'),
             icon: 'fas fa-credit-card',
             data: [
                 { id: 'PAY001', orderNo: 'PO2024001', supplier: '华为技术有限公司', amount: '¥425,000', paymentMethod: '银行转账', status: '已支付', requestDate: '2024-01-20', approvalDate: '2024-01-22', paymentDate: '2024-01-23', approver: '财务经理' },
@@ -403,7 +436,7 @@ function getModuleData(moduleId) {
         },
         // Finance 模块
         'reconciliation': {
-            title: '财务对账',
+            title: i18n.t('module.reconciliation'),
             icon: 'fas fa-balance-scale',
             data: [
                 { period: '2024年1月', supplier: '华为技术有限公司', invoiceAmount: '¥425,000', paidAmount: '¥425,000', difference: '¥0', status: '已对账', reconcileDate: '2024-01-30', notes: '金额一致，无差异' },
@@ -414,7 +447,7 @@ function getModuleData(moduleId) {
             ]
         },
         'invoicing': {
-            title: '发票管理',
+            title: i18n.t('module.invoicing'),
             icon: 'fas fa-file-invoice-dollar',
             data: [
                 { invoiceNo: 'INV2024001', supplier: '华为技术有限公司', orderNo: 'PO2024001', amount: '¥425,000', taxAmount: '¥55,250', totalAmount: '¥480,250', issueDate: '2024-01-20', dueDate: '2024-02-19', status: '已收票', type: '增值税专用发票' },
@@ -425,7 +458,7 @@ function getModuleData(moduleId) {
             ]
         },
         'capital-planning': {
-            title: '资本规划',
+            title: i18n.t('module.capital_planning'),
             icon: 'fas fa-chart-pie',
             data: [
                 { id: 'CAP001', projectName: '智能制造设备升级', category: '设备投资', budgetYear: '2024', totalBudget: '¥15,000,000', allocatedBudget: '¥8,500,000', usedBudget: '¥3,200,000', remainingBudget: '¥11,800,000', status: '执行中', roi: '18.5%', paybackPeriod: '3.2年' },
@@ -436,7 +469,7 @@ function getModuleData(moduleId) {
             ]
         },
         'payment-processing-finance': {
-            title: '财务支付处理',
+            title: i18n.t('module.payment_processing_finance'),
             icon: 'fas fa-money-bill-wave',
             data: [
                 { id: 'FPAY001', paymentType: '供应商付款', recipient: '华为技术有限公司', amount: '¥425,000', currency: 'CNY', method: '银行转账', status: '已完成', initiatedBy: '采购部', approvedBy: '财务经理', processedDate: '2024-01-23', reference: 'PO2024001' },
@@ -448,7 +481,7 @@ function getModuleData(moduleId) {
         }
     };
     
-    return moduleDataMap[moduleId] || { title: '模块详情', icon: 'fas fa-info-circle', data: [] };
+    return moduleDataMap[moduleId] || { title: i18n.t('module.details'), icon: 'fas fa-info-circle', data: [] };
 }
 
 /**
@@ -462,7 +495,7 @@ function createModuleContent(moduleData) {
     let contentHTML = `
         <div class="module-detail-header">
             <button class="back-btn" id="back-btn">
-                <i class="fas fa-arrow-left"></i> 返回
+                <i class="fas fa-arrow-left"></i> ${i18n.t('action.back')}
             </button>
             <div class="module-detail-title">
                 <i class="${icon}"></i>
@@ -473,7 +506,7 @@ function createModuleContent(moduleData) {
     `;
     
     if (data.length === 0) {
-        contentHTML += '<p class="no-data">暂无数据</p>';
+        contentHTML += '<p class="no-data">' + i18n.t('common.no_data') + '</p>';
     } else {
         // Create table based on data type
         contentHTML += createDataTable(data, title);
@@ -490,7 +523,7 @@ function createModuleContent(moduleData) {
  * @returns {string} Table HTML
  */
 function createDataTable(data, title) {
-    if (data.length === 0) return '<p class="no-data">暂无数据</p>';
+    if (data.length === 0) return '<p class="no-data">' + i18n.t('common.no_data') + '</p>';
     
     const firstItem = data[0];
     const headers = Object.keys(firstItem);
@@ -498,18 +531,18 @@ function createDataTable(data, title) {
     let tableHTML = '<div class="data-table-container"><table class="data-table"><thead><tr>';
     
     // Create headers based on data type
-    if (title === '供应商管理') {
-        tableHTML += '<th>供应商ID</th><th>供应商名称</th><th>类别</th><th>评级</th><th>状态</th><th>联系人</th><th>电话</th><th>邮箱</th><th>订单数</th><th>交易金额</th><th>操作</th>';
-    } else if (title === '订单处理') {
-        tableHTML += '<th>订单号</th><th>供应商</th><th>商品</th><th>数量</th><th>单价</th><th>总金额</th><th>状态</th><th>下单日期</th><th>交付日期</th><th>进度</th><th>操作</th>';
-    } else if (title === '库存预测') {
-        tableHTML += '<th>物料名称</th><th>当前库存</th><th>安全库存</th><th>预测需求</th><th>补货点</th><th>状态</th><th>趋势</th><th>建议订货日期</th><th>建议数量</th><th>操作</th>';
-    } else if (title === '合同管理') {
-        tableHTML += '<th>合同号</th><th>供应商</th><th>合同标题</th><th>合同金额</th><th>开始日期</th><th>结束日期</th><th>状态</th><th>续约提醒</th><th>合同条款</th><th>操作</th>';
-    } else if (title === '物流跟踪') {
-        tableHTML += '<th>运单号</th><th>供应商</th><th>货物</th><th>状态</th><th>当前位置</th><th>预计送达</th><th>进度</th><th>路线</th><th>操作</th>';
-    } else if (title === '财务对账') {
-        tableHTML += '<th>对账期间</th><th>供应商</th><th>发票金额</th><th>已付金额</th><th>差异</th><th>状态</th><th>对账日期</th><th>备注</th><th>操作</th>';
+    if (title === i18n.t('module.supplier_management')) {
+        tableHTML += '<th>' + i18n.t('table.supplier.id') + '</th><th>' + i18n.t('table.supplier.name') + '</th><th>' + i18n.t('table.supplier.category') + '</th><th>' + i18n.t('table.supplier.rating') + '</th><th>' + i18n.t('table.supplier.status') + '</th><th>' + i18n.t('table.supplier.contact') + '</th><th>' + i18n.t('table.supplier.phone') + '</th><th>' + i18n.t('table.supplier.email') + '</th><th>' + i18n.t('table.supplier.orders') + '</th><th>' + i18n.t('table.supplier.amount') + '</th><th>' + i18n.t('table.action') + '</th>';
+    } else if (title === i18n.t('module.order_processing')) {
+        tableHTML += '<th>' + i18n.t('table.order.id') + '</th><th>' + i18n.t('table.order.supplier') + '</th><th>' + i18n.t('table.order.items') + '</th><th>' + i18n.t('table.order.quantity') + '</th><th>' + i18n.t('table.order.unit_price') + '</th><th>' + i18n.t('table.order.total_amount') + '</th><th>' + i18n.t('table.order.status') + '</th><th>' + i18n.t('table.order.order_date') + '</th><th>' + i18n.t('table.order.delivery_date') + '</th><th>' + i18n.t('table.order.progress') + '</th><th>' + i18n.t('table.action') + '</th>';
+    } else if (title === i18n.t('module.inventory_forecast')) {
+        tableHTML += '<th>' + i18n.t('table.inventory.item') + '</th><th>' + i18n.t('table.inventory.current_stock') + '</th><th>' + i18n.t('table.inventory.safety_stock') + '</th><th>' + i18n.t('table.inventory.forecast_demand') + '</th><th>' + i18n.t('table.inventory.reorder_point') + '</th><th>' + i18n.t('table.inventory.status') + '</th><th>' + i18n.t('table.inventory.trend') + '</th><th>' + i18n.t('table.inventory.next_order_date') + '</th><th>' + i18n.t('table.inventory.suggested_quantity') + '</th><th>' + i18n.t('table.action') + '</th>';
+    } else if (title === i18n.t('module.contract_management')) {
+        tableHTML += '<th>' + i18n.t('table.contract.id') + '</th><th>' + i18n.t('table.contract.supplier') + '</th><th>' + i18n.t('table.contract.title') + '</th><th>' + i18n.t('table.contract.value') + '</th><th>' + i18n.t('table.contract.start_date') + '</th><th>' + i18n.t('table.contract.end_date') + '</th><th>' + i18n.t('table.contract.status') + '</th><th>' + i18n.t('table.contract.renewal_date') + '</th><th>' + i18n.t('table.contract.terms') + '</th><th>' + i18n.t('table.action') + '</th>';
+    } else if (title === i18n.t('module.logistics_tracking')) {
+        tableHTML += '<th>' + i18n.t('table.logistics.tracking_no') + '</th><th>' + i18n.t('table.logistics.supplier') + '</th><th>' + i18n.t('table.logistics.items') + '</th><th>' + i18n.t('table.logistics.status') + '</th><th>' + i18n.t('table.logistics.current_location') + '</th><th>' + i18n.t('table.logistics.estimated_delivery') + '</th><th>' + i18n.t('table.logistics.progress') + '</th><th>' + i18n.t('table.logistics.route') + '</th><th>' + i18n.t('table.action') + '</th>';
+    } else if (title === i18n.t('module.reconciliation')) {
+        tableHTML += '<th>' + i18n.t('table.reconciliation.period') + '</th><th>' + i18n.t('table.reconciliation.supplier') + '</th><th>' + i18n.t('table.reconciliation.invoice_amount') + '</th><th>' + i18n.t('table.reconciliation.paid_amount') + '</th><th>' + i18n.t('table.reconciliation.difference') + '</th><th>' + i18n.t('table.reconciliation.status') + '</th><th>' + i18n.t('table.reconciliation.reconcile_date') + '</th><th>' + i18n.t('table.reconciliation.notes') + '</th><th>' + i18n.t('table.action') + '</th>';
     }
     
     tableHTML += '</tr></thead><tbody>';
@@ -518,8 +551,8 @@ function createDataTable(data, title) {
     data.forEach(item => {
         tableHTML += '<tr>';
         
-        if (title === '供应商管理') {
-            const statusClass = item.status === '活跃' ? 'status-active' : 'status-inactive';
+        if (title === i18n.t('module.supplier_management')) {
+            const statusClass = item.status === i18n.t('status.active') ? 'status-active' : 'status-inactive';
             tableHTML += `
                 <td>${item.id}</td>
                 <td><strong>${item.name}</strong></td>
@@ -531,9 +564,9 @@ function createDataTable(data, title) {
                 <td>${item.email}</td>
                 <td>${item.orders}</td>
                 <td><strong>${item.amount}</strong></td>
-                <td><button class="btn-small btn-primary">查看详情</button></td>
+                <td><button class="btn-small btn-primary">${i18n.t('action.view_details')}</button></td>
             `;
-        } else if (title === '订单处理') {
+        } else if (title === i18n.t('module.order_processing')) {
             const statusClass = getOrderStatusClass(item.status);
             tableHTML += `
                 <td><strong>${item.id}</strong></td>
@@ -546,9 +579,9 @@ function createDataTable(data, title) {
                 <td>${item.orderDate}</td>
                 <td>${item.deliveryDate}</td>
                 <td><div class="progress-bar"><div class="progress-fill" style="width: ${item.progress}%"></div><span>${item.progress}%</span></div></td>
-                <td><button class="btn-small btn-primary">跟踪</button></td>
+                <td><button class="btn-small btn-primary">${i18n.t('action.track')}</button></td>
             `;
-        } else if (title === '库存预测') {
+        } else if (title === i18n.t('module.inventory_forecast')) {
             const statusClass = getInventoryStatusClass(item.status);
             tableHTML += `
                 <td><strong>${item.item}</strong></td>
@@ -560,9 +593,9 @@ function createDataTable(data, title) {
                 <td><span class="trend">${item.trend}</span></td>
                 <td>${item.nextOrderDate}</td>
                 <td>${item.suggestedQuantity}</td>
-                <td><button class="btn-small btn-success">创建订单</button></td>
+                <td><button class="btn-small btn-success">${i18n.t('action.create_order')}</button></td>
             `;
-        } else if (title === '合同管理') {
+        } else if (title === i18n.t('module.contract_management')) {
             const statusClass = getContractStatusClass(item.status);
             tableHTML += `
                 <td><strong>${item.id}</strong></td>
@@ -574,9 +607,9 @@ function createDataTable(data, title) {
                 <td><span class="status ${statusClass}">${item.status}</span></td>
                 <td>${item.renewalDate}</td>
                 <td class="contract-terms">${item.terms}</td>
-                <td><button class="btn-small btn-primary">查看合同</button></td>
+                <td><button class="btn-small btn-primary">${i18n.t('action.view_contract')}</button></td>
             `;
-        } else if (title === '物流跟踪') {
+        } else if (title === i18n.t('module.logistics_tracking')) {
             const statusClass = getLogisticsStatusClass(item.status);
             const routeStr = item.route.join(' → ');
             tableHTML += `
@@ -588,9 +621,9 @@ function createDataTable(data, title) {
                 <td>${item.estimatedDelivery}</td>
                 <td><div class="progress-bar"><div class="progress-fill" style="width: ${item.progress}%"></div><span>${item.progress}%</span></div></td>
                 <td class="route-info">${routeStr}</td>
-                <td><button class="btn-small btn-info">详细跟踪</button></td>
+                <td><button class="btn-small btn-info">${i18n.t('action.detailed_tracking')}</button></td>
             `;
-        } else if (title === '财务对账') {
+        } else if (title === i18n.t('module.reconciliation')) {
             const statusClass = getReconciliationStatusClass(item.status);
             tableHTML += `
                 <td>${item.period}</td>
@@ -601,7 +634,7 @@ function createDataTable(data, title) {
                 <td><span class="status ${statusClass}">${item.status}</span></td>
                 <td>${item.reconcileDate}</td>
                 <td class="notes">${item.notes}</td>
-                <td><button class="btn-small btn-warning">处理</button></td>
+                <td><button class="btn-small btn-warning">${i18n.t('action.process')}</button></td>
             `;
         }
         
@@ -969,7 +1002,7 @@ function initSpendChart() {
     new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['云服务器VPS', 'GPU计算实例', '存储服务', '网络带宽', '安全防护', '监控运维'],
+            labels: [i18n.t('chart.spend.vps'), i18n.t('chart.spend.gpu'), i18n.t('chart.spend.storage'), i18n.t('chart.spend.network'), i18n.t('chart.spend.security'), i18n.t('chart.spend.monitoring')],
             datasets: [{
                 data: [35, 25, 15, 12, 8, 5],
                 backgroundColor: [
@@ -1034,9 +1067,9 @@ function initStatusChart() {
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['配置中', '部署中', '运行中', '已交付', '已暂停'],
+            labels: [i18n.t('chart.status.configuring'), i18n.t('chart.status.deploying'), i18n.t('chart.status.running'), i18n.t('chart.status.delivered'), i18n.t('chart.status.paused')],
             datasets: [{
-                label: 'VPS实例数量',
+                label: i18n.t('chart.status.vps_instances'),
                 data: [32, 58, 145, 89, 12],
                 backgroundColor: [
                     '#ed8936',
@@ -1066,7 +1099,7 @@ function initStatusChart() {
                 tooltip: {
                     callbacks: {
                         label: function(context) {
-                            return context.dataset.label + ': ' + context.parsed.y + ' 个实例';
+                            return context.dataset.label + ': ' + context.parsed.y + ' ' + i18n.t('chart.status.instances');
                         }
                     }
                 }
@@ -1109,9 +1142,9 @@ function initTrendChart() {
     new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月'],
+            labels: [i18n.t('chart.month.jan'), i18n.t('chart.month.feb'), i18n.t('chart.month.mar'), i18n.t('chart.month.apr'), i18n.t('chart.month.may'), i18n.t('chart.month.jun'), i18n.t('chart.month.jul'), i18n.t('chart.month.aug')],
             datasets: [{
-                label: 'VPS采购支出 (万元)',
+                label: i18n.t('chart.trend.vps_expenditure'),
                 data: [185, 220, 195, 245, 285, 268, 315, 298],
                 borderColor: '#4299e1',
                 backgroundColor: 'rgba(66, 153, 225, 0.1)',
@@ -1124,7 +1157,7 @@ function initTrendChart() {
                 pointRadius: 6,
                 pointHoverRadius: 8
             }, {
-                label: '成本节约 (万元)',
+                label: i18n.t('chart.trend.cost_savings'),
                 data: [15, 25, 18, 32, 42, 35, 48, 45],
                 borderColor: '#48bb78',
                 backgroundColor: 'rgba(72, 187, 120, 0.1)',
@@ -1203,9 +1236,9 @@ function initPerformanceChart() {
     new Chart(ctx, {
         type: 'radar',
         data: {
-            labels: ['交付及时性', '产品质量', '价格竞争力', '服务响应', '合规性', '创新能力'],
+            labels: [i18n.t('chart.performance.delivery'), i18n.t('chart.performance.quality'), i18n.t('chart.performance.price'), i18n.t('chart.performance.service'), i18n.t('chart.performance.compliance'), i18n.t('chart.performance.innovation')],
             datasets: [{
-                label: '优秀供应商',
+                label: i18n.t('chart.performance.excellent_supplier'),
                 data: [90, 85, 78, 92, 88, 82],
                 borderColor: '#2ecc71',
                 backgroundColor: 'rgba(46, 204, 113, 0.2)',
@@ -1214,7 +1247,7 @@ function initPerformanceChart() {
                 pointBorderColor: '#ffffff',
                 pointBorderWidth: 2
             }, {
-                label: '平均水平',
+                label: i18n.t('chart.performance.average_level'),
                 data: [75, 70, 85, 68, 72, 65],
                 borderColor: '#f39c12',
                 backgroundColor: 'rgba(243, 156, 18, 0.2)',
@@ -1276,7 +1309,7 @@ function initInventoryChart() {
     new Chart(ctx, {
         type: 'polarArea',
         data: {
-            labels: ['运行正常', '资源预警', '性能告警', '维护中', '待部署'],
+            labels: [i18n.t('chart.inventory.normal'), i18n.t('chart.inventory.warning'), i18n.t('chart.inventory.alert'), i18n.t('chart.inventory.maintenance'), i18n.t('chart.inventory.pending')],
             datasets: [{
                 data: [52, 18, 12, 8, 10],
                 backgroundColor: [
@@ -1350,13 +1383,13 @@ function initSavingsChart() {
         data: {
             labels: ['Q1', 'Q2', 'Q3', 'Q4'],
             datasets: [{
-                label: '目标节约',
+                label: i18n.t('chart.savings.target'),
                 data: [50, 60, 55, 65],
                 backgroundColor: 'rgba(52, 152, 219, 0.6)',
                 borderColor: '#3498db',
                 borderWidth: 2
             }, {
-                label: '实际节约',
+                label: i18n.t('chart.savings.actual'),
                 data: [45, 58, 62, 70],
                 backgroundColor: 'rgba(46, 204, 113, 0.6)',
                 borderColor: '#2ecc71',
@@ -1377,7 +1410,7 @@ function initSavingsChart() {
                 tooltip: {
                     callbacks: {
                         label: function(context) {
-                            return context.dataset.label + ': ' + context.parsed.y + '万元';
+                            return context.dataset.label + ': ' + context.parsed.y + i18n.t('chart.unit.ten_thousand_yuan');
                         }
                     }
                 }

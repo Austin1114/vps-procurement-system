@@ -240,6 +240,26 @@ const i18nConfig = {
             es: 'Escriba su solicitud aquí...',
             ar: 'اكتب طلبك هنا...'
         },
+        'ai.enhanced': {
+            en: 'AI Enhanced',
+            zh: 'AI增强',
+            ja: 'AI強化',
+            ko: 'AI 강화',
+            fr: 'Amélioré par IA',
+            de: 'KI-Erweitert',
+            es: 'Mejorado por IA',
+            ar: 'معزز بالذكاء الاصطناعي'
+        },
+        'ai.powered': {
+            en: 'AI Powered',
+            zh: 'AI驱动',
+            ja: 'AI駆動',
+            ko: 'AI 구동',
+            fr: 'Alimenté par IA',
+            de: 'KI-angetrieben',
+            es: 'Impulsado por IA',
+            ar: 'مدعوم بالذكاء الاصطناعي'
+        },
         
         // Module Cards
         'module.team_collaboration': {
@@ -367,6 +387,36 @@ const i18nConfig = {
             de: 'Monatlicher Beschaffungstrend',
             es: 'Tendencia de Adquisiciones Mensuales',
             ar: 'اتجاه الشراء الشهري'
+        },
+        'chart.supplier_performance': {
+            en: 'Supplier Performance Score',
+            zh: '供应商绩效评分',
+            ja: 'サプライヤーパフォーマンススコア',
+            ko: '공급업체 성과 점수',
+            fr: 'Score de Performance des Fournisseurs',
+            de: 'Lieferantenleistungsbewertung',
+            es: 'Puntuación de Rendimiento del Proveedor',
+            ar: 'درجة أداء المورد'
+        },
+        'chart.inventory_overview': {
+            en: 'Inventory Status Overview',
+            zh: '库存状态概览',
+            ja: '在庫状況概要',
+            ko: '재고 상태 개요',
+            fr: 'Aperçu du Statut des Stocks',
+            de: 'Bestandsstatus-Übersicht',
+            es: 'Resumen del Estado del Inventario',
+            ar: 'نظرة عامة على حالة المخزون'
+        },
+        'chart.cost_savings_analysis': {
+            en: 'Cost Savings Analysis',
+            zh: '成本节约分析',
+            ja: 'コスト削減分析',
+            ko: '비용 절약 분석',
+            fr: 'Analyse des Économies de Coûts',
+            de: 'Kosteneinsparungsanalyse',
+            es: 'Análisis de Ahorro de Costos',
+            ar: 'تحليل توفير التكاليف'
         },
         
         // AI Insights
@@ -583,6 +633,1296 @@ const i18nConfig = {
             de: 'Bestellungen bearbeiten und verfolgen',
             es: 'Procesar y rastrear órdenes de compra',
             ar: 'معالجة وتتبع أوامر الشراء'
+        },
+        
+        // Planning Module
+        'module.procurement_planning': {
+            en: 'Procurement Planning',
+            zh: '采购规划',
+            ja: '調達計画',
+            ko: '조달 계획',
+            fr: 'Planification d\'Approvisionnement',
+            de: 'Beschaffungsplanung',
+            es: 'Planificación de Adquisiciones',
+            ar: 'تخطيط المشتريات'
+        },
+        'module.procurement_planning_desc': {
+            en: 'Plan and schedule procurement activities',
+            zh: '规划和安排采购活动',
+            ja: '調達活動を計画・スケジュールする',
+            ko: '조달 활동 계획 및 일정 조정',
+            fr: 'Planifier et programmer les activités d\'approvisionnement',
+            de: 'Beschaffungsaktivitäten planen und terminieren',
+            es: 'Planificar y programar actividades de adquisiciones',
+            ar: 'تخطيط وجدولة أنشطة المشتريات'
+        },
+        'module.supplier_catalog': {
+            en: 'Supplier Catalog',
+            zh: '供应商目录',
+            ja: 'サプライヤーカタログ',
+            ko: '공급업체 카탈로그',
+            fr: 'Catalogue des Fournisseurs',
+            de: 'Lieferantenkatalog',
+            es: 'Catálogo de Proveedores',
+            ar: 'كتالوج الموردين'
+        },
+        'module.supplier_catalog_desc': {
+            en: 'Browse and manage supplier catalogs',
+            zh: '浏览和管理供应商目录',
+            ja: 'サプライヤーカタログを閲覧・管理する',
+            ko: '공급업체 카탈로그 탐색 및 관리',
+            fr: 'Parcourir et gérer les catalogues des fournisseurs',
+            de: 'Lieferantenkataloge durchsuchen und verwalten',
+            es: 'Explorar y gestionar catálogos de proveedores',
+            ar: 'تصفح وإدارة كتالوجات الموردين'
+        },
+        'module.arrival_planning': {
+            en: 'Arrival Planning',
+            zh: '到货规划',
+            ja: '到着計画',
+            ko: '도착 계획',
+            fr: 'Planification d\'Arrivée',
+            de: 'Ankunftsplanung',
+            es: 'Planificación de Llegada',
+            ar: 'تخطيط الوصول'
+        },
+        'module.arrival_planning_desc': {
+            en: 'Plan and schedule incoming deliveries',
+            zh: '规划和安排到货交付',
+            ja: '入荷配送を計画・スケジュールする',
+            ko: '입고 배송 계획 및 일정 조정',
+            fr: 'Planifier et programmer les livraisons entrantes',
+            de: 'Eingehende Lieferungen planen und terminieren',
+            es: 'Planificar y programar entregas entrantes',
+            ar: 'تخطيط وجدولة عمليات التسليم الواردة'
+        },
+        'module.inventory_forecast': {
+            en: 'Inventory Forecast',
+            zh: '库存预测',
+            ja: '在庫予測',
+            ko: '재고 예측',
+            fr: 'Prévision des Stocks',
+            de: 'Bestandsprognose',
+            es: 'Pronóstico de Inventario',
+            ar: 'توقعات المخزون'
+        },
+        'module.inventory_forecast_desc': {
+            en: 'Forecast inventory levels and needs',
+            zh: '预测库存水平和需求',
+            ja: '在庫レベルとニーズを予測する',
+            ko: '재고 수준 및 수요 예측',
+            fr: 'Prévoir les niveaux et besoins en stock',
+            de: 'Bestandsniveaus und -bedarf prognostizieren',
+            es: 'Pronosticar niveles y necesidades de inventario',
+            ar: 'توقع مستويات واحتياجات المخزون'
+        },
+        
+        // Logistics Module
+        'module.logistics_procurement': {
+            en: 'Logistics Procurement',
+            zh: '物流采购',
+            ja: '物流調達',
+            ko: '물류 조달',
+            fr: 'Approvisionnement Logistique',
+            de: 'Logistikbeschaffung',
+            es: 'Adquisiciones Logísticas',
+            ar: 'شراء الخدمات اللوجستية'
+        },
+        'module.logistics_procurement_desc': {
+            en: 'Procure logistics services and solutions',
+            zh: '采购物流服务和解决方案',
+            ja: '物流サービスとソリューションを調達する',
+            ko: '물류 서비스 및 솔루션 조달',
+            fr: 'Se procurer des services et solutions logistiques',
+            de: 'Logistikdienstleistungen und -lösungen beschaffen',
+            es: 'Adquirir servicios y soluciones logísticas',
+            ar: 'شراء الخدمات والحلول اللوجستية'
+        },
+        'module.logistics_tracking': {
+            en: 'Logistics Tracking',
+            zh: '物流跟踪',
+            ja: '物流追跡',
+            ko: '물류 추적',
+            fr: 'Suivi Logistique',
+            de: 'Logistikverfolgung',
+            es: 'Seguimiento Logístico',
+            ar: 'تتبع الخدمات اللوجستية'
+        },
+        'module.logistics_tracking_desc': {
+            en: 'Track shipments and deliveries in real-time',
+            zh: '实时跟踪货物和交付',
+            ja: '貨物と配送をリアルタイムで追跡する',
+            ko: '실시간으로 화물 및 배송 추적',
+            fr: 'Suivre les expéditions et livraisons en temps réel',
+            de: 'Sendungen und Lieferungen in Echtzeit verfolgen',
+            es: 'Rastrear envíos y entregas en tiempo real',
+            ar: 'تتبع الشحنات والتسليم في الوقت الفعلي'
+        },
+        'module.payment_processing': {
+            en: 'Payment Processing',
+            zh: '支付处理',
+            ja: '支払い処理',
+            ko: '결제 처리',
+            fr: 'Traitement des Paiements',
+            de: 'Zahlungsabwicklung',
+            es: 'Procesamiento de Pagos',
+            ar: 'معالجة المدفوعات'
+        },
+        'module.payment_processing_desc': {
+            en: 'Process and manage logistics payments',
+            zh: '处理和管理物流支付',
+            ja: '物流支払いを処理・管理する',
+            ko: '물류 결제 처리 및 관리',
+            fr: 'Traiter et gérer les paiements logistiques',
+            de: 'Logistikzahlungen bearbeiten und verwalten',
+            es: 'Procesar y gestionar pagos logísticos',
+            ar: 'معالجة وإدارة مدفوعات الخدمات اللوجستية'
+        },
+        
+        // Finance Module
+        'module.reconciliation': {
+            en: 'Reconciliation',
+            zh: '对账',
+            ja: '調整',
+            ko: '조정',
+            fr: 'Réconciliation',
+            de: 'Abstimmung',
+            es: 'Reconciliación',
+            ar: 'التوفيق'
+        },
+        'module.reconciliation_desc': {
+            en: 'Reconcile financial transactions and records',
+            zh: '对账财务交易和记录',
+            ja: '財務取引と記録を調整する',
+            ko: '재무 거래 및 기록 조정',
+            fr: 'Réconcilier les transactions et registres financiers',
+            de: 'Finanztransaktionen und -aufzeichnungen abstimmen',
+            es: 'Conciliar transacciones y registros financieros',
+            ar: 'توفيق المعاملات والسجلات المالية'
+        },
+        'module.invoicing': {
+            en: 'Invoicing',
+            zh: '开票',
+            ja: '請求書発行',
+            ko: '송장 발행',
+            fr: 'Facturation',
+            de: 'Rechnungsstellung',
+            es: 'Facturación',
+            ar: 'إصدار الفواتير'
+        },
+        'module.invoicing_desc': {
+            en: 'Generate and manage invoices',
+            zh: '生成和管理发票',
+            ja: '請求書を生成・管理する',
+            ko: '송장 생성 및 관리',
+            fr: 'Générer et gérer les factures',
+            de: 'Rechnungen erstellen und verwalten',
+            es: 'Generar y gestionar facturas',
+            ar: 'إنشاء وإدارة الفواتير'
+        },
+        'module.capital_planning': {
+            en: 'Capital Planning',
+            zh: '资本规划',
+            ja: '資本計画',
+            ko: '자본 계획',
+            fr: 'Planification du Capital',
+            de: 'Kapitalplanung',
+            es: 'Planificación de Capital',
+            ar: 'تخطيط رأس المال'
+        },
+        'module.capital_planning_desc': {
+            en: 'Plan and manage capital expenditures',
+            zh: '规划和管理资本支出',
+            ja: '資本支出を計画・管理する',
+            ko: '자본 지출 계획 및 관리',
+            fr: 'Planifier et gérer les dépenses en capital',
+            de: 'Kapitalausgaben planen und verwalten',
+            es: 'Planificar y gestionar gastos de capital',
+            ar: 'تخطيط وإدارة النفقات الرأسمالية'
+        },
+        'module.payment_processing_finance': {
+            en: 'Payment Processing',
+            zh: '支付处理',
+            ja: '支払い処理',
+            ko: '결제 처리',
+            fr: 'Traitement des Paiements',
+            de: 'Zahlungsabwicklung',
+            es: 'Procesamiento de Pagos',
+            ar: 'معالجة المدفوعات'
+        },
+        'module.payment_processing_finance_desc': {
+            en: 'Process and manage financial payments',
+            zh: '处理和管理财务支付',
+            ja: '財務支払いを処理・管理する',
+            ko: '재무 결제 처리 및 관리',
+            fr: 'Traiter et gérer les paiements financiers',
+            de: 'Finanzzahlungen bearbeiten und verwalten',
+            es: 'Procesar y gestionar pagos financieros',
+            ar: 'معالجة وإدارة المدفوعات المالية'
+        },
+        
+        // Common
+        'module.details': {
+            en: 'Module Details',
+            zh: '模块详情',
+            ja: 'モジュール詳細',
+            ko: '모듈 세부사항',
+            fr: 'Détails du Module',
+            de: 'Modul-Details',
+            es: 'Detalles del Módulo',
+            ar: 'تفاصيل الوحدة'
+        },
+        'common.no_data': {
+            en: 'No Data Available',
+            zh: '暂无数据',
+            ja: 'データがありません',
+            ko: '데이터가 없습니다',
+            fr: 'Aucune Donnée Disponible',
+            de: 'Keine Daten Verfügbar',
+            es: 'No Hay Datos Disponibles',
+            ar: 'لا توجد بيانات متاحة'
+        },
+        
+        // Actions
+        'action.back': {
+            en: 'Back',
+            zh: '返回',
+            ja: '戻る',
+            ko: '뒤로',
+            fr: 'Retour',
+            de: 'Zurück',
+            es: 'Atrás',
+            ar: 'رجوع'
+        },
+        'action.view_details': {
+            en: 'View Details',
+            zh: '查看详情',
+            ja: '詳細を見る',
+            ko: '상세 보기',
+            fr: 'Voir les Détails',
+            de: 'Details Anzeigen',
+            es: 'Ver Detalles',
+            ar: 'عرض التفاصيل'
+        },
+        'action.track': {
+            en: 'Track',
+            zh: '跟踪',
+            ja: '追跡',
+            ko: '추적',
+            fr: 'Suivre',
+            de: 'Verfolgen',
+            es: 'Rastrear',
+            ar: 'تتبع'
+        },
+        'action.view_contract': {
+            en: 'View Contract',
+            zh: '查看合同',
+            ja: '契約を見る',
+            ko: '계약 보기',
+            fr: 'Voir le Contrat',
+            de: 'Vertrag Anzeigen',
+            es: 'Ver Contrato',
+            ar: 'عرض العقد'
+        },
+        'action.detailed_tracking': {
+            en: 'Detailed Tracking',
+            zh: '详细跟踪',
+            ja: '詳細追跡',
+            ko: '상세 추적',
+            fr: 'Suivi Détaillé',
+            de: 'Detaillierte Verfolgung',
+            es: 'Seguimiento Detallado',
+            ar: 'تتبع مفصل'
+        },
+        'action.process': {
+            en: 'Process',
+            zh: '处理',
+            ja: '処理',
+            ko: '처리',
+            fr: 'Traiter',
+            de: 'Verarbeiten',
+            es: 'Procesar',
+            ar: 'معالجة'
+        },
+        
+        // Status
+        'status.active': {
+            en: 'Active',
+            zh: '活跃',
+            ja: 'アクティブ',
+            ko: '활성',
+            fr: 'Actif',
+            de: 'Aktiv',
+            es: 'Activo',
+            ar: 'نشط'
+        },
+        
+        // Chart Labels
+        'chart.spend.vps': {
+            en: 'VPS Cloud Servers',
+            zh: '云服务器VPS',
+            ja: 'VPSクラウドサーバー',
+            ko: 'VPS 클라우드 서버',
+            fr: 'Serveurs Cloud VPS',
+            de: 'VPS-Cloud-Server',
+            es: 'Servidores Cloud VPS',
+            ar: 'خوادم VPS السحابية'
+        },
+        'chart.spend.gpu': {
+            en: 'GPU Computing Instances',
+            zh: 'GPU计算实例',
+            ja: 'GPUコンピューティングインスタンス',
+            ko: 'GPU 컴퓨팅 인스턴스',
+            fr: 'Instances de Calcul GPU',
+            de: 'GPU-Computing-Instanzen',
+            es: 'Instancias de Computación GPU',
+            ar: 'مثيلات الحوسبة GPU'
+        },
+        'chart.spend.storage': {
+            en: 'Storage Services',
+            zh: '存储服务',
+            ja: 'ストレージサービス',
+            ko: '스토리지 서비스',
+            fr: 'Services de Stockage',
+            de: 'Speicherdienste',
+            es: 'Servicios de Almacenamiento',
+            ar: 'خدمات التخزين'
+        },
+        'chart.spend.network': {
+            en: 'Network Bandwidth',
+            zh: '网络带宽',
+            ja: 'ネットワーク帯域幅',
+            ko: '네트워크 대역폭',
+            fr: 'Bande Passante Réseau',
+            de: 'Netzwerk-Bandbreite',
+            es: 'Ancho de Banda de Red',
+            ar: 'عرض النطاق الترددي للشبكة'
+        },
+        'chart.spend.security': {
+            en: 'Security Protection',
+            zh: '安全防护',
+            ja: 'セキュリティ保護',
+            ko: '보안 보호',
+            fr: 'Protection de Sécurité',
+            de: 'Sicherheitsschutz',
+            es: 'Protección de Seguridad',
+            ar: 'الحماية الأمنية'
+        },
+        'chart.spend.monitoring': {
+            en: 'Monitoring & Operations',
+            zh: '监控运维',
+            ja: '監視・運用',
+            ko: '모니터링 및 운영',
+            fr: 'Surveillance et Opérations',
+            de: 'Überwachung und Betrieb',
+            es: 'Monitoreo y Operaciones',
+            ar: 'المراقبة والعمليات'
+        },
+        
+        // Chart Status
+        'chart.status.configuring': {
+            en: 'Configuring',
+            zh: '配置中',
+            ja: '設定中',
+            ko: '구성 중',
+            fr: 'Configuration',
+            de: 'Konfiguration',
+            es: 'Configurando',
+            ar: 'تكوين'
+        },
+        'chart.status.deploying': {
+            en: 'Deploying',
+            zh: '部署中',
+            ja: '展開中',
+            ko: '배포 중',
+            fr: 'Déploiement',
+            de: 'Bereitstellung',
+            es: 'Desplegando',
+            ar: 'نشر'
+        },
+        'chart.status.running': {
+            en: 'Running',
+            zh: '运行中',
+            ja: '実行中',
+            ko: '실행 중',
+            fr: 'En Cours',
+            de: 'Läuft',
+            es: 'Ejecutando',
+            ar: 'تشغيل'
+        },
+        'chart.status.delivered': {
+            en: 'Delivered',
+            zh: '已交付',
+            ja: '配達済み',
+            ko: '배송됨',
+            fr: 'Livré',
+            de: 'Geliefert',
+            es: 'Entregado',
+            ar: 'تم التسليم'
+        },
+        'chart.status.paused': {
+            en: 'Paused',
+            zh: '已暂停',
+            ja: '一時停止',
+            ko: '일시정지',
+            fr: 'En Pause',
+            de: 'Pausiert',
+            es: 'Pausado',
+            ar: 'متوقف مؤقتاً'
+        },
+        'chart.status.vps_instances': {
+            en: 'VPS Instances',
+            zh: 'VPS实例数量',
+            ja: 'VPSインスタンス数',
+            ko: 'VPS 인스턴스',
+            fr: 'Instances VPS',
+            de: 'VPS-Instanzen',
+            es: 'Instancias VPS',
+            ar: 'مثيلات VPS'
+        },
+        'chart.status.instances': {
+            en: 'instances',
+            zh: '个实例',
+            ja: 'インスタンス',
+            ko: '인스턴스',
+            fr: 'instances',
+            de: 'Instanzen',
+            es: 'instancias',
+            ar: 'مثيلات'
+        },
+        
+        // Chart Months
+        'chart.month.jan': {
+            en: 'Jan',
+            zh: '1月',
+            ja: '1月',
+            ko: '1월',
+            fr: 'Jan',
+            de: 'Jan',
+            es: 'Ene',
+            ar: 'ينا'
+        },
+        'chart.month.feb': {
+            en: 'Feb',
+            zh: '2月',
+            ja: '2月',
+            ko: '2월',
+            fr: 'Fév',
+            de: 'Feb',
+            es: 'Feb',
+            ar: 'فبر'
+        },
+        'chart.month.mar': {
+            en: 'Mar',
+            zh: '3月',
+            ja: '3月',
+            ko: '3월',
+            fr: 'Mar',
+            de: 'Mär',
+            es: 'Mar',
+            ar: 'مار'
+        },
+        'chart.month.apr': {
+            en: 'Apr',
+            zh: '4月',
+            ja: '4月',
+            ko: '4월',
+            fr: 'Avr',
+            de: 'Apr',
+            es: 'Abr',
+            ar: 'أبر'
+        },
+        'chart.month.may': {
+            en: 'May',
+            zh: '5月',
+            ja: '5月',
+            ko: '5월',
+            fr: 'Mai',
+            de: 'Mai',
+            es: 'May',
+            ar: 'ماي'
+        },
+        'chart.month.jun': {
+            en: 'Jun',
+            zh: '6月',
+            ja: '6月',
+            ko: '6월',
+            fr: 'Juin',
+            de: 'Jun',
+            es: 'Jun',
+            ar: 'يون'
+        },
+        'chart.month.jul': {
+            en: 'Jul',
+            zh: '7月',
+            ja: '7月',
+            ko: '7월',
+            fr: 'Juil',
+            de: 'Jul',
+            es: 'Jul',
+            ar: 'يول'
+        },
+        'chart.month.aug': {
+            en: 'Aug',
+            zh: '8月',
+            ja: '8月',
+            ko: '8월',
+            fr: 'Août',
+            de: 'Aug',
+            es: 'Ago',
+            ar: 'أغس'
+        },
+        
+        // Chart Trend
+        'chart.trend.vps_expenditure': {
+            en: 'VPS Procurement Expenditure (10K)',
+            zh: 'VPS采购支出 (万元)',
+            ja: 'VPS調達支出 (万元)',
+            ko: 'VPS 조달 지출 (만원)',
+            fr: 'Dépenses d\'Approvisionnement VPS (10K)',
+            de: 'VPS-Beschaffungsausgaben (10K)',
+            es: 'Gasto de Adquisiciones VPS (10K)',
+            ar: 'مصاريف شراء VPS (10K)'
+        },
+        'chart.trend.cost_savings': {
+            en: 'Cost Savings (10K)',
+            zh: '成本节约 (万元)',
+            ja: 'コスト削減 (万元)',
+            ko: '비용 절약 (만원)',
+            fr: 'Économies de Coûts (10K)',
+            de: 'Kosteneinsparungen (10K)',
+            es: 'Ahorros de Costos (10K)',
+            ar: 'توفير التكاليف (10K)'
+        },
+        
+        // Chart Units
+        'chart.unit.ten_thousand': {
+            en: 'K',
+            zh: '万',
+            ja: '万',
+            ko: '만',
+            fr: 'K',
+            de: 'K',
+            es: 'K',
+            ar: 'K'
+        },
+        'chart.unit.ten_thousand_yuan': {
+            en: 'K Yuan',
+            zh: '万元',
+            ja: '万元',
+            ko: '만원',
+            fr: 'K Yuan',
+            de: 'K Yuan',
+            es: 'K Yuan',
+            ar: 'K يوان'
+        },
+        
+        // Chart Performance
+        'chart.performance.delivery': {
+            en: 'Delivery Timeliness',
+            zh: '交付及时性',
+            ja: '納期遵守',
+            ko: '배송 적시성',
+            fr: 'Ponctualité de Livraison',
+            de: 'Lieferpünktlichkeit',
+            es: 'Puntualidad de Entrega',
+            ar: 'الالتزام بمواعيد التسليم'
+        },
+        'chart.performance.quality': {
+            en: 'Product Quality',
+            zh: '产品质量',
+            ja: '製品品質',
+            ko: '제품 품질',
+            fr: 'Qualité du Produit',
+            de: 'Produktqualität',
+            es: 'Calidad del Producto',
+            ar: 'جودة المنتج'
+        },
+        'chart.performance.price': {
+            en: 'Price Competitiveness',
+            zh: '价格竞争力',
+            ja: '価格競争力',
+            ko: '가격 경쟁력',
+            fr: 'Compétitivité des Prix',
+            de: 'Preiswettbewerbsfähigkeit',
+            es: 'Competitividad de Precios',
+            ar: 'القدرة التنافسية للسعر'
+        },
+        'chart.performance.service': {
+            en: 'Service Response',
+            zh: '服务响应',
+            ja: 'サービス対応',
+            ko: '서비스 응답',
+            fr: 'Réponse au Service',
+            de: 'Serviceantwort',
+            es: 'Respuesta del Servicio',
+            ar: 'استجابة الخدمة'
+        },
+        'chart.performance.compliance': {
+            en: 'Compliance',
+            zh: '合规性',
+            ja: 'コンプライアンス',
+            ko: '준수',
+            fr: 'Conformité',
+            de: 'Compliance',
+            es: 'Cumplimiento',
+            ar: 'الامتثال'
+        },
+        'chart.performance.innovation': {
+            en: 'Innovation',
+            zh: '创新能力',
+            ja: 'イノベーション',
+            ko: '혁신',
+            fr: 'Innovation',
+            de: 'Innovation',
+            es: 'Innovación',
+            ar: 'الابتكار'
+        },
+        'chart.performance.excellent_supplier': {
+            en: 'Excellent Supplier',
+            zh: '优秀供应商',
+            ja: '優秀サプライヤー',
+            ko: '우수 공급업체',
+            fr: 'Fournisseur Excellent',
+            de: 'Hervorragender Lieferant',
+            es: 'Proveedor Excelente',
+            ar: 'مورد ممتاز'
+        },
+        'chart.performance.average_level': {
+            en: 'Average Level',
+            zh: '平均水平',
+            ja: '平均レベル',
+            ko: '평균 수준',
+            fr: 'Niveau Moyen',
+            de: 'Durchschnittsniveau',
+            es: 'Nivel Promedio',
+            ar: 'المستوى المتوسط'
+        },
+        
+        // Chart Inventory
+        'chart.inventory.normal': {
+            en: 'Normal Operation',
+            zh: '运行正常',
+            ja: '正常稼働',
+            ko: '정상 운영',
+            fr: 'Fonctionnement Normal',
+            de: 'Normaler Betrieb',
+            es: 'Operación Normal',
+            ar: 'تشغيل طبيعي'
+        },
+        'chart.inventory.warning': {
+            en: 'Resource Warning',
+            zh: '资源预警',
+            ja: 'リソース警告',
+            ko: '리소스 경고',
+            fr: 'Avertissement de Ressources',
+            de: 'Ressourcenwarnung',
+            es: 'Advertencia de Recursos',
+            ar: 'تحذير الموارد'
+        },
+        'chart.inventory.alert': {
+            en: 'Performance Alert',
+            zh: '性能告警',
+            ja: 'パフォーマンスアラート',
+            ko: '성능 알림',
+            fr: 'Alerte de Performance',
+            de: 'Leistungsalarm',
+            es: 'Alerta de Rendimiento',
+            ar: 'تنبيه الأداء'
+        },
+        'chart.inventory.maintenance': {
+            en: 'Under Maintenance',
+            zh: '维护中',
+            ja: 'メンテナンス中',
+            ko: '유지보수 중',
+            fr: 'En Maintenance',
+            de: 'In Wartung',
+            es: 'En Mantenimiento',
+            ar: 'قيد الصيانة'
+        },
+        'chart.inventory.pending': {
+            en: 'Pending Deployment',
+            zh: '待部署',
+            ja: '展開待ち',
+            ko: '배포 대기',
+            fr: 'En Attente de Déploiement',
+            de: 'Bereitstellung Ausstehend',
+            es: 'Pendiente de Despliegue',
+            ar: 'في انتظار النشر'
+        },
+        
+        // Chart Savings
+        'chart.savings.target': {
+            en: 'Target Savings',
+            zh: '目标节约',
+            ja: '目標削減',
+            ko: '목표 절약',
+            fr: 'Économies Cibles',
+            de: 'Zieleinsparungen',
+            es: 'Ahorros Objetivo',
+            ar: 'التوفير المستهدف'
+        },
+        'chart.savings.actual': {
+            en: 'Actual Savings',
+            zh: '实际节约',
+            ja: '実際削減',
+            ko: '실제 절약',
+            fr: 'Économies Réelles',
+            de: 'Tatsächliche Einsparungen',
+            es: 'Ahorros Reales',
+            ar: 'التوفير الفعلي'
+        },
+        
+        // Table Headers
+        'table.action': {
+            en: 'Action',
+            zh: '操作',
+            ja: '操作',
+            ko: '작업',
+            fr: 'Action',
+            de: 'Aktion',
+            es: 'Acción',
+            ar: 'إجراء'
+        },
+        'table.supplier.id': {
+            en: 'Supplier ID',
+            zh: '供应商ID',
+            ja: 'サプライヤーID',
+            ko: '공급업체 ID',
+            fr: 'ID Fournisseur',
+            de: 'Lieferanten-ID',
+            es: 'ID Proveedor',
+            ar: 'معرف المورد'
+        },
+        'table.supplier.name': {
+            en: 'Supplier Name',
+            zh: '供应商名称',
+            ja: 'サプライヤー名',
+            ko: '공급업체명',
+            fr: 'Nom du Fournisseur',
+            de: 'Lieferantenname',
+            es: 'Nombre del Proveedor',
+            ar: 'اسم المورد'
+        },
+        'table.supplier.category': {
+            en: 'Category',
+            zh: '类别',
+            ja: 'カテゴリ',
+            ko: '카테고리',
+            fr: 'Catégorie',
+            de: 'Kategorie',
+            es: 'Categoría',
+            ar: 'الفئة'
+        },
+        'table.supplier.rating': {
+            en: 'Rating',
+            zh: '评级',
+            ja: '評価',
+            ko: '평가',
+            fr: 'Évaluation',
+            de: 'Bewertung',
+            es: 'Calificación',
+            ar: 'التقييم'
+        },
+        'table.supplier.status': {
+            en: 'Status',
+            zh: '状态',
+            ja: 'ステータス',
+            ko: '상태',
+            fr: 'Statut',
+            de: 'Status',
+            es: 'Estado',
+            ar: 'الحالة'
+        },
+        'table.supplier.contact': {
+            en: 'Contact',
+            zh: '联系人',
+            ja: '連絡先',
+            ko: '연락처',
+            fr: 'Contact',
+            de: 'Kontakt',
+            es: 'Contacto',
+            ar: 'جهة الاتصال'
+        },
+        'table.supplier.phone': {
+            en: 'Phone',
+            zh: '电话',
+            ja: '電話',
+            ko: '전화',
+            fr: 'Téléphone',
+            de: 'Telefon',
+            es: 'Teléfono',
+            ar: 'الهاتف'
+        },
+        'table.supplier.email': {
+            en: 'Email',
+            zh: '邮箱',
+            ja: 'メール',
+            ko: '이메일',
+            fr: 'Email',
+            de: 'E-Mail',
+            es: 'Correo',
+            ar: 'البريد الإلكتروني'
+        },
+        'table.supplier.orders': {
+            en: 'Orders',
+            zh: '订单数',
+            ja: '注文数',
+            ko: '주문 수',
+            fr: 'Commandes',
+            de: 'Bestellungen',
+            es: 'Pedidos',
+            ar: 'الطلبات'
+        },
+        'table.supplier.amount': {
+            en: 'Amount',
+            zh: '交易金额',
+            ja: '取引金額',
+            ko: '거래 금액',
+            fr: 'Montant',
+            de: 'Betrag',
+            es: 'Monto',
+            ar: 'المبلغ'
+        },
+        'table.order.id': {
+            en: 'Order ID',
+            zh: '订单号',
+            ja: '注文ID',
+            ko: '주문 ID',
+            fr: 'ID Commande',
+            de: 'Bestell-ID',
+            es: 'ID Pedido',
+            ar: 'معرف الطلب'
+        },
+        'table.order.supplier': {
+            en: 'Supplier',
+            zh: '供应商',
+            ja: 'サプライヤー',
+            ko: '공급업체',
+            fr: 'Fournisseur',
+            de: 'Lieferant',
+            es: 'Proveedor',
+            ar: 'المورد'
+        },
+        'table.order.items': {
+            en: 'Items',
+            zh: '商品',
+            ja: '商品',
+            ko: '상품',
+            fr: 'Articles',
+            de: 'Artikel',
+            es: 'Artículos',
+            ar: 'المنتجات'
+        },
+        'table.order.quantity': {
+            en: 'Quantity',
+            zh: '数量',
+            ja: '数量',
+            ko: '수량',
+            fr: 'Quantité',
+            de: 'Menge',
+            es: 'Cantidad',
+            ar: 'الكمية'
+        },
+        'table.order.unit_price': {
+            en: 'Unit Price',
+            zh: '单价',
+            ja: '単価',
+            ko: '단가',
+            fr: 'Prix Unitaire',
+            de: 'Stückpreis',
+            es: 'Precio Unitario',
+            ar: 'سعر الوحدة'
+        },
+        'table.order.total_amount': {
+            en: 'Total Amount',
+            zh: '总金额',
+            ja: '総額',
+            ko: '총액',
+            fr: 'Montant Total',
+            de: 'Gesamtbetrag',
+            es: 'Monto Total',
+            ar: 'المبلغ الإجمالي'
+        },
+        'table.order.status': {
+            en: 'Status',
+            zh: '状态',
+            ja: 'ステータス',
+            ko: '상태',
+            fr: 'Statut',
+            de: 'Status',
+            es: 'Estado',
+            ar: 'الحالة'
+        },
+        'table.order.order_date': {
+            en: 'Order Date',
+            zh: '下单日期',
+            ja: '注文日',
+            ko: '주문일',
+            fr: 'Date de Commande',
+            de: 'Bestelldatum',
+            es: 'Fecha de Pedido',
+            ar: 'تاريخ الطلب'
+        },
+        'table.order.delivery_date': {
+            en: 'Delivery Date',
+            zh: '交付日期',
+            ja: '納期',
+            ko: '배송일',
+            fr: 'Date de Livraison',
+            de: 'Lieferdatum',
+            es: 'Fecha de Entrega',
+            ar: 'تاريخ التسليم'
+        },
+        'table.order.progress': {
+            en: 'Progress',
+            zh: '进度',
+            ja: '進捗',
+            ko: '진행률',
+            fr: 'Progression',
+            de: 'Fortschritt',
+            es: 'Progreso',
+            ar: 'التقدم'
+        },
+        'table.inventory.item': {
+            en: 'Item Name',
+            zh: '物料名称',
+            ja: '品目名',
+            ko: '품목명',
+            fr: 'Nom de l\'Article',
+            de: 'Artikelname',
+            es: 'Nombre del Artículo',
+            ar: 'اسم العنصر'
+        },
+        'table.inventory.current_stock': {
+            en: 'Current Stock',
+            zh: '当前库存',
+            ja: '現在庫',
+            ko: '현재 재고',
+            fr: 'Stock Actuel',
+            de: 'Aktueller Bestand',
+            es: 'Stock Actual',
+            ar: 'المخزون الحالي'
+        },
+        'table.inventory.safety_stock': {
+            en: 'Safety Stock',
+            zh: '安全库存',
+            ja: '安全在庫',
+            ko: '안전 재고',
+            fr: 'Stock de Sécurité',
+            de: 'Sicherheitsbestand',
+            es: 'Stock de Seguridad',
+            ar: 'المخزون الآمن'
+        },
+        'table.inventory.forecast_demand': {
+            en: 'Forecast Demand',
+            zh: '预测需求',
+            ja: '予測需要',
+            ko: '예측 수요',
+            fr: 'Demande Prévisionnelle',
+            de: 'Prognostizierte Nachfrage',
+            es: 'Demanda Pronosticada',
+            ar: 'الطلب المتوقع'
+        },
+        'table.inventory.reorder_point': {
+            en: 'Reorder Point',
+            zh: '补货点',
+            ja: '発注点',
+            ko: '재주문점',
+            fr: 'Point de Réapprovisionnement',
+            de: 'Bestellpunkt',
+            es: 'Punto de Reorden',
+            ar: 'نقطة إعادة الطلب'
+        },
+        'table.inventory.status': {
+            en: 'Status',
+            zh: '状态',
+            ja: 'ステータス',
+            ko: '상태',
+            fr: 'Statut',
+            de: 'Status',
+            es: 'Estado',
+            ar: 'الحالة'
+        },
+        'table.inventory.trend': {
+            en: 'Trend',
+            zh: '趋势',
+            ja: 'トレンド',
+            ko: '트렌드',
+            fr: 'Tendance',
+            de: 'Trend',
+            es: 'Tendencia',
+            ar: 'الاتجاه'
+        },
+        'table.inventory.next_order_date': {
+            en: 'Next Order Date',
+            zh: '建议订货日期',
+            ja: '次回発注日',
+            ko: '다음 주문일',
+            fr: 'Date de Prochaine Commande',
+            de: 'Nächstes Bestelldatum',
+            es: 'Fecha de Próximo Pedido',
+            ar: 'تاريخ الطلب التالي'
+        },
+        'table.inventory.suggested_quantity': {
+            en: 'Suggested Quantity',
+            zh: '建议数量',
+            ja: '推奨数量',
+            ko: '권장 수량',
+            fr: 'Quantité Suggérée',
+            de: 'Vorgeschlagene Menge',
+            es: 'Cantidad Sugerida',
+            ar: 'الكمية المقترحة'
+        },
+        'table.contract.id': {
+            en: 'Contract ID',
+            zh: '合同号',
+            ja: '契約ID',
+            ko: '계약 ID',
+            fr: 'ID Contrat',
+            de: 'Vertrags-ID',
+            es: 'ID Contrato',
+            ar: 'معرف العقد'
+        },
+        'table.contract.supplier': {
+            en: 'Supplier',
+            zh: '供应商',
+            ja: 'サプライヤー',
+            ko: '공급업체',
+            fr: 'Fournisseur',
+            de: 'Lieferant',
+            es: 'Proveedor',
+            ar: 'المورد'
+        },
+        'table.contract.title': {
+            en: 'Contract Title',
+            zh: '合同标题',
+            ja: '契約タイトル',
+            ko: '계약 제목',
+            fr: 'Titre du Contrat',
+            de: 'Vertragstitel',
+            es: 'Título del Contrato',
+            ar: 'عنوان العقد'
+        },
+        'table.contract.value': {
+            en: 'Contract Value',
+            zh: '合同金额',
+            ja: '契約金額',
+            ko: '계약 금액',
+            fr: 'Valeur du Contrat',
+            de: 'Vertragswert',
+            es: 'Valor del Contrato',
+            ar: 'قيمة العقد'
+        },
+        'table.contract.start_date': {
+            en: 'Start Date',
+            zh: '开始日期',
+            ja: '開始日',
+            ko: '시작일',
+            fr: 'Date de Début',
+            de: 'Startdatum',
+            es: 'Fecha de Inicio',
+            ar: 'تاريخ البدء'
+        },
+        'table.contract.end_date': {
+            en: 'End Date',
+            zh: '结束日期',
+            ja: '終了日',
+            ko: '종료일',
+            fr: 'Date de Fin',
+            de: 'Enddatum',
+            es: 'Fecha de Fin',
+            ar: 'تاريخ الانتهاء'
+        },
+        'table.contract.status': {
+            en: 'Status',
+            zh: '状态',
+            ja: 'ステータス',
+            ko: '상태',
+            fr: 'Statut',
+            de: 'Status',
+            es: 'Estado',
+            ar: 'الحالة'
+        },
+        'table.contract.renewal_date': {
+            en: 'Renewal Date',
+            zh: '续约提醒',
+            ja: '更新日',
+            ko: '갱신일',
+            fr: 'Date de Renouvellement',
+            de: 'Verlängerungsdatum',
+            es: 'Fecha de Renovación',
+            ar: 'تاريخ التجديد'
+        },
+        'table.contract.terms': {
+            en: 'Contract Terms',
+            zh: '合同条款',
+            ja: '契約条件',
+            ko: '계약 조건',
+            fr: 'Conditions du Contrat',
+            de: 'Vertragsbedingungen',
+            es: 'Términos del Contrato',
+            ar: 'شروط العقد'
+        },
+        'table.logistics.tracking_no': {
+            en: 'Tracking No.',
+            zh: '运单号',
+            ja: '追跡番号',
+            ko: '추적 번호',
+            fr: 'N° de Suivi',
+            de: 'Verfolgungsnummer',
+            es: 'N° de Seguimiento',
+            ar: 'رقم التتبع'
+        },
+        'table.logistics.supplier': {
+            en: 'Supplier',
+            zh: '供应商',
+            ja: 'サプライヤー',
+            ko: '공급업체',
+            fr: 'Fournisseur',
+            de: 'Lieferant',
+            es: 'Proveedor',
+            ar: 'المورد'
+        },
+        'table.logistics.items': {
+            en: 'Items',
+            zh: '货物',
+            ja: '商品',
+            ko: '화물',
+            fr: 'Articles',
+            de: 'Artikel',
+            es: 'Artículos',
+            ar: 'البضائع'
+        },
+        'table.logistics.status': {
+            en: 'Status',
+            zh: '状态',
+            ja: 'ステータス',
+            ko: '상태',
+            fr: 'Statut',
+            de: 'Status',
+            es: 'Estado',
+            ar: 'الحالة'
+        },
+        'table.logistics.current_location': {
+            en: 'Current Location',
+            zh: '当前位置',
+            ja: '現在地',
+            ko: '현재 위치',
+            fr: 'Emplacement Actuel',
+            de: 'Aktueller Standort',
+            es: 'Ubicación Actual',
+            ar: 'الموقع الحالي'
+        },
+        'table.logistics.estimated_delivery': {
+            en: 'Estimated Delivery',
+            zh: '预计送达',
+            ja: '予定配達',
+            ko: '예상 배송',
+            fr: 'Livraison Estimée',
+            de: 'Geschätzte Lieferung',
+            es: 'Entrega Estimada',
+            ar: 'التسليم المتوقع'
+        },
+        'table.logistics.progress': {
+            en: 'Progress',
+            zh: '进度',
+            ja: '進捗',
+            ko: '진행률',
+            fr: 'Progression',
+            de: 'Fortschritt',
+            es: 'Progreso',
+            ar: 'التقدم'
+        },
+        'table.logistics.route': {
+            en: 'Route',
+            zh: '路线',
+            ja: 'ルート',
+            ko: '경로',
+            fr: 'Itinéraire',
+            de: 'Route',
+            es: 'Ruta',
+            ar: 'المسار'
+        },
+        'table.reconciliation.period': {
+            en: 'Period',
+            zh: '对账期间',
+            ja: '期間',
+            ko: '기간',
+            fr: 'Période',
+            de: 'Zeitraum',
+            es: 'Período',
+            ar: 'الفترة'
+        },
+        'table.reconciliation.supplier': {
+            en: 'Supplier',
+            zh: '供应商',
+            ja: 'サプライヤー',
+            ko: '공급업체',
+            fr: 'Fournisseur',
+            de: 'Lieferant',
+            es: 'Proveedor',
+            ar: 'المورد'
+        },
+        'table.reconciliation.invoice_amount': {
+            en: 'Invoice Amount',
+            zh: '发票金额',
+            ja: '請求書金額',
+            ko: '송장 금액',
+            fr: 'Montant de la Facture',
+            de: 'Rechnungsbetrag',
+            es: 'Monto de Factura',
+            ar: 'مبلغ الفاتورة'
+        },
+        'table.reconciliation.paid_amount': {
+            en: 'Paid Amount',
+            zh: '已付金额',
+            ja: '支払済み金額',
+            ko: '지불 금액',
+            fr: 'Montant Payé',
+            de: 'Gezahlter Betrag',
+            es: 'Monto Pagado',
+            ar: 'المبلغ المدفوع'
+        },
+        'table.reconciliation.difference': {
+            en: 'Difference',
+            zh: '差异',
+            ja: '差異',
+            ko: '차이',
+            fr: 'Différence',
+            de: 'Differenz',
+            es: 'Diferencia',
+            ar: 'الفرق'
+        },
+        'table.reconciliation.status': {
+            en: 'Status',
+            zh: '状态',
+            ja: 'ステータス',
+            ko: '상태',
+            fr: 'Statut',
+            de: 'Status',
+            es: 'Estado',
+            ar: 'الحالة'
+        },
+        'table.reconciliation.reconcile_date': {
+            en: 'Reconcile Date',
+            zh: '对账日期',
+            ja: '調整日',
+            ko: '조정일',
+            fr: 'Date de Réconciliation',
+            de: 'Abstimmungsdatum',
+            es: 'Fecha de Conciliación',
+            ar: 'تاريخ التوفيق'
+        },
+        'table.reconciliation.notes': {
+            en: 'Notes',
+            zh: '备注',
+            ja: '備考',
+            ko: '비고',
+            fr: 'Notes',
+            de: 'Notizen',
+            es: 'Notas',
+            ar: 'ملاحظات'
         }
     }
 };
