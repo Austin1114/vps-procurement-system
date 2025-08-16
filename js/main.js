@@ -37,15 +37,66 @@ function initI18n() {
  * Setup language switcher functionality
  */
 function setupLanguageSwitcher() {
-    const languageSelect = document.getElementById('language-select');
-    if (languageSelect) {
-        languageSelect.addEventListener('change', function() {
-            const selectedLanguage = this.value;
-            i18n.setLanguage(selectedLanguage);
+    const languageBtn = document.getElementById('language-btn');
+    const languageDropdown = document.getElementById('language-dropdown');
+    const languageOptions = document.querySelectorAll('.language-option');
+    
+    // Toggle dropdown visibility
+    if (languageBtn && languageDropdown) {
+        languageBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            languageDropdown.classList.toggle('hidden');
         });
         
-        // Set the select value to current language
-        languageSelect.value = i18n.getCurrentLanguage();
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!languageBtn.contains(e.target) && !languageDropdown.contains(e.target)) {
+                languageDropdown.classList.add('hidden');
+            }
+        });
+    }
+    
+    // Handle language option selection
+    languageOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const selectedLanguage = this.getAttribute('data-lang');
+            i18n.setLanguage(selectedLanguage);
+            
+            // Close dropdown after selection
+            if (languageDropdown) {
+                languageDropdown.classList.add('hidden');
+            }
+            
+            // Update button text to show selected language
+            updateLanguageButtonText(selectedLanguage);
+        });
+    });
+    
+    // Initialize button text
+    updateLanguageButtonText(i18n.getCurrentLanguage());
+}
+
+/**
+ * Update language button text to show current language
+ */
+function updateLanguageButtonText(languageCode) {
+    const languageBtn = document.getElementById('language-btn');
+    const languageSpan = languageBtn?.querySelector('span');
+    
+    if (languageSpan) {
+        const languageNames = {
+            'en': 'English',
+            'zh': '中文',
+            'ja': '日本語',
+            'ko': '한국어',
+            'fr': 'Français',
+            'de': 'Deutsch',
+            'es': 'Español',
+            'ar': 'العربية'
+        };
+        
+        languageSpan.textContent = languageNames[languageCode] || 'Language';
     }
 }
 

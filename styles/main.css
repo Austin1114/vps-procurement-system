@@ -93,17 +93,82 @@ body {
 
 /* Language Switcher Styles */
 .language-switcher {
+    position: relative;
     display: flex;
     align-items: center;
     margin-right: 1rem;
 }
 
-.language-switcher label {
-    margin-right: 0.5rem;
+.language-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
     font-size: 0.9rem;
-    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 120px;
+    justify-content: space-between;
 }
 
+.language-btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-1px);
+}
+
+.language-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    margin-top: 0.25rem;
+    overflow: hidden;
+}
+
+.language-dropdown.hidden {
+    display: none;
+}
+
+.language-option {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: white;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.language-option:last-child {
+    border-bottom: none;
+}
+
+.language-option:hover {
+    background-color: var(--accent-color);
+}
+
+.language-option .flag {
+    font-size: 1.2rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Legacy select styles for backward compatibility */
 .language-select {
     background-color: var(--secondary-color);
     color: white;
@@ -169,9 +234,14 @@ body {
     margin-left: 1rem;
 }
 
-[dir="rtl"] .language-switcher label {
-    margin-right: 0;
-    margin-left: 0.5rem;
+[dir="rtl"] .language-dropdown {
+    left: auto;
+    right: 0;
+}
+
+[dir="rtl"] .language-option {
+    flex-direction: row-reverse;
+    text-align: right;
 }
 
 [dir="rtl"] .main-content {
