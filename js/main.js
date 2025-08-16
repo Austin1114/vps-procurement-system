@@ -139,11 +139,13 @@ function getModuleData(moduleId) {
             title: '团队协作',
             icon: 'fas fa-users',
             data: [
-                { id: 'TEAM001', projectName: '智能采购系统升级', teamLead: '张工程师', members: 8, status: '进行中', progress: 75, startDate: '2024-01-10', deadline: '2024-03-15', priority: '高', tasks: 24, completed: 18 },
-                { id: 'TEAM002', projectName: '供应商评估体系', teamLead: '李主管', members: 5, status: '计划中', progress: 15, startDate: '2024-02-01', deadline: '2024-04-30', priority: '中', tasks: 12, completed: 2 },
-                { id: 'TEAM003', projectName: '库存优化项目', teamLead: '王经理', members: 6, status: '进行中', progress: 60, startDate: '2023-12-15', deadline: '2024-02-28', priority: '高', tasks: 20, completed: 12 },
-                { id: 'TEAM004', projectName: '成本分析系统', teamLead: '赵分析师', members: 4, status: '已完成', progress: 100, startDate: '2023-11-01', deadline: '2024-01-15', priority: '中', tasks: 15, completed: 15 },
-                { id: 'TEAM005', projectName: '物流跟踪优化', teamLead: '陈总监', members: 7, status: '进行中', progress: 40, startDate: '2024-01-20', deadline: '2024-05-10', priority: '中', tasks: 18, completed: 7 }
+                { id: 'TEAM001', projectName: 'VPS智慧采购系统升级', teamLead: '张云架构师', members: 8, status: '进行中', progress: 75, startDate: '2024-01-10', deadline: '2024-03-15', priority: '高', tasks: 24, completed: 18, department: '技术部', expertise: '云计算架构' },
+                { id: 'TEAM002', projectName: 'VPS供应商评估体系', teamLead: '李采购主管', members: 5, status: '计划中', progress: 15, startDate: '2024-02-01', deadline: '2024-04-30', priority: '中', tasks: 12, completed: 2, department: '采购部', expertise: '供应商管理' },
+                { id: 'TEAM003', projectName: 'VPS成本优化项目', teamLead: '王财务经理', members: 6, status: '进行中', progress: 60, startDate: '2023-12-15', deadline: '2024-02-28', priority: '高', tasks: 20, completed: 12, department: '财务部', expertise: '成本分析' },
+                { id: 'TEAM004', projectName: 'VPS性能监控系统', teamLead: '赵运维专家', members: 4, status: '已完成', progress: 100, startDate: '2023-11-01', deadline: '2024-01-15', priority: '中', tasks: 15, completed: 15, department: '运维部', expertise: '系统监控' },
+                { id: 'TEAM005', projectName: 'VPS安全合规项目', teamLead: '陈安全总监', members: 7, status: '进行中', progress: 40, startDate: '2024-01-20', deadline: '2024-05-10', priority: '中', tasks: 18, completed: 7, department: '安全部', expertise: '信息安全' },
+                { id: 'TEAM006', projectName: 'VPS自动化部署', teamLead: '刘DevOps工程师', members: 5, status: '进行中', progress: 85, startDate: '2024-01-05', deadline: '2024-02-20', priority: '高', tasks: 16, completed: 14, department: '技术部', expertise: 'DevOps自动化' },
+                { id: 'TEAM007', projectName: 'VPS数据分析平台', teamLead: '周数据分析师', members: 3, status: '计划中', progress: 25, startDate: '2024-02-15', deadline: '2024-05-30', priority: '中', tasks: 20, completed: 5, department: '数据部', expertise: '大数据分析' }
             ]
         },
         'production-management': {
@@ -168,16 +170,34 @@ function getModuleData(moduleId) {
                 { id: 'TASK005', taskName: '性能测试', project: '成本分析系统', assignee: '陈测试工程师', priority: '高', status: '已完成', progress: 100, startDate: '2024-01-08', dueDate: '2024-01-18', estimatedHours: 50, actualHours: 48 }
             ]
         },
+        // VPS产品展示模块
+        'vps-products': {
+            title: 'VPS产品展示',
+            icon: 'fas fa-server',
+            data: [
+                { id: 'VPS001', name: '阿里云ECS通用型', provider: '阿里云', cpu: '2核', memory: '4GB', storage: '40GB SSD', bandwidth: '5Mbps', os: 'CentOS 7.9', price: '¥89/月', region: '华东1(杭州)', status: '可用', rating: 4.8, features: ['弹性扩容', '快照备份', '安全组'] },
+                { id: 'VPS002', name: '腾讯云标准型', provider: '腾讯云', cpu: '4核', memory: '8GB', storage: '50GB SSD', bandwidth: '8Mbps', os: 'Ubuntu 20.04', price: '¥168/月', region: '华南1(深圳)', status: '可用', rating: 4.7, features: ['负载均衡', 'CDN加速', '数据库'] },
+                { id: 'VPS003', name: '华为云通用计算型', provider: '华为云', cpu: '2核', memory: '4GB', storage: '40GB SSD', bandwidth: '3Mbps', os: 'Windows Server 2019', price: '¥128/月', region: '华北1(北京)', status: '可用', rating: 4.6, features: ['弹性IP', '云监控', '安全防护'] },
+                { id: 'VPS004', name: 'AWS EC2 t3.medium', provider: 'AWS', cpu: '2核', memory: '4GB', storage: '30GB GP2', bandwidth: '不限', os: 'Amazon Linux 2', price: '$33.41/月', region: 'ap-southeast-1', status: '可用', rating: 4.9, features: ['Auto Scaling', 'CloudWatch', 'VPC'] },
+                { id: 'VPS005', name: 'Azure Standard B2s', provider: 'Microsoft Azure', cpu: '2核', memory: '4GB', storage: '8GB SSD', bandwidth: '不限', os: 'Windows Server 2022', price: '$30.66/月', region: 'East Asia', status: '可用', rating: 4.5, features: ['Azure Monitor', 'Load Balancer', 'Backup'] },
+                { id: 'VPS006', name: '百度云通用型', provider: '百度智能云', cpu: '1核', memory: '2GB', storage: '40GB SSD', bandwidth: '1Mbps', os: 'CentOS 8.2', price: '¥65/月', region: '华北-北京', status: '可用', rating: 4.3, features: ['云监控', '安全组', '镜像市场'] },
+                { id: 'VPS007', name: '京东云通用型', provider: '京东云', cpu: '2核', memory: '4GB', storage: '40GB SSD', bandwidth: '2Mbps', os: 'Ubuntu 18.04', price: '¥78/月', region: '华东-上海', status: '可用', rating: 4.4, features: ['弹性伸缩', '负载均衡', '云硬盘'] },
+                { id: 'VPS008', name: 'DigitalOcean Droplet', provider: 'DigitalOcean', cpu: '1核', memory: '1GB', storage: '25GB SSD', bandwidth: '1TB传输', os: 'Ubuntu 22.04', price: '$6/月', region: 'Singapore', status: '可用', rating: 4.6, features: ['Snapshots', 'Monitoring', 'Firewalls'] }
+            ]
+        },
         // Procurement 模块
         'supplier-management': {
             title: '供应商管理',
             icon: 'fas fa-handshake',
             data: [
-                { id: 'SUP001', name: '华为技术有限公司', category: 'IT设备', rating: 4.8, status: '活跃', contact: '张经理', phone: '138-0013-8888', email: 'zhang@huawei.com', orders: 45, amount: '¥2,580,000' },
-                { id: 'SUP002', name: '联想集团', category: 'IT设备', rating: 4.6, status: '活跃', contact: '李总监', phone: '139-0014-9999', email: 'li@lenovo.com', orders: 32, amount: '¥1,890,000' },
-                { id: 'SUP003', name: '中石化润滑油', category: '工业用品', rating: 4.9, status: '活跃', contact: '王部长', phone: '137-0015-7777', email: 'wang@sinopec.com', orders: 28, amount: '¥980,000' },
-                { id: 'SUP004', name: '三一重工', category: '机械设备', rating: 4.7, status: '暂停', contact: '赵工程师', phone: '136-0016-6666', email: 'zhao@sany.com', orders: 15, amount: '¥3,200,000' },
-                { id: 'SUP005', name: '美的集团', category: '办公设备', rating: 4.5, status: '活跃', contact: '陈主管', phone: '135-0017-5555', email: 'chen@midea.com', orders: 22, amount: '¥650,000' }
+                { id: 'SUP001', name: '阿里云计算有限公司', category: 'VPS云服务', rating: 4.8, status: '活跃', contact: '张云经理', phone: '138-0013-8888', email: 'zhang@aliyun.com', orders: 45, amount: '¥2,580,000' },
+                { id: 'SUP002', name: '腾讯云计算有限公司', category: 'VPS云服务', rating: 4.7, status: '活跃', contact: '李云总监', phone: '139-0014-9999', email: 'li@tencent.com', orders: 32, amount: '¥1,890,000' },
+                { id: 'SUP003', name: '华为云服务', category: 'VPS云服务', rating: 4.6, status: '活跃', contact: '王云部长', phone: '137-0015-7777', email: 'wang@huaweicloud.com', orders: 28, amount: '¥980,000' },
+                { id: 'SUP004', name: 'Amazon Web Services', category: 'VPS云服务', rating: 4.9, status: '活跃', contact: 'John Smith', phone: '+1-206-266-1000', email: 'john@aws.amazon.com', orders: 15, amount: '$320,000' },
+                { id: 'SUP005', name: 'Microsoft Azure', category: 'VPS云服务', rating: 4.5, status: '活跃', contact: 'Sarah Johnson', phone: '+1-425-882-8080', email: 'sarah@microsoft.com', orders: 22, amount: '$250,000' },
+                { id: 'SUP006', name: '百度智能云', category: 'VPS云服务', rating: 4.3, status: '活跃', contact: '赵云主管', phone: '135-0017-5555', email: 'zhao@baidu.com', orders: 18, amount: '¥650,000' },
+                { id: 'SUP007', name: '京东云', category: 'VPS云服务', rating: 4.4, status: '活跃', contact: '陈云经理', phone: '136-0018-6666', email: 'chen@jdcloud.com', orders: 12, amount: '¥420,000' },
+                { id: 'SUP008', name: 'DigitalOcean', category: 'VPS云服务', rating: 4.6, status: '活跃', contact: 'Mike Wilson', phone: '+1-347-875-6044', email: 'mike@digitalocean.com', orders: 8, amount: '$180,000' }
             ]
         },
         'performance-evaluation': {
@@ -206,11 +226,13 @@ function getModuleData(moduleId) {
             title: '订单处理',
             icon: 'fas fa-shopping-basket',
             data: [
-                { id: 'PO2024001', supplier: '华为技术有限公司', items: 'ThinkPad X1 Carbon 笔记本电脑', quantity: 50, unitPrice: '¥8,500', totalAmount: '¥425,000', status: '已确认', orderDate: '2024-01-15', deliveryDate: '2024-01-25', progress: 75 },
-                { id: 'PO2024002', supplier: '中石化润滑油', items: '工业润滑油 5L装', quantity: 200, unitPrice: '¥180', totalAmount: '¥36,000', status: '处理中', orderDate: '2024-01-18', deliveryDate: '2024-01-28', progress: 45 },
-                { id: 'PO2024003', supplier: '三一重工', items: '挖掘机配件套装', quantity: 5, unitPrice: '¥25,000', totalAmount: '¥125,000', status: '待审批', orderDate: '2024-01-20', deliveryDate: '2024-02-05', progress: 20 },
-                { id: 'PO2024004', supplier: '美的集团', items: '办公空调 3匹立式', quantity: 15, unitPrice: '¥4,200', totalAmount: '¥63,000', status: '已发货', orderDate: '2024-01-12', deliveryDate: '2024-01-22', progress: 90 },
-                { id: 'PO2024005', supplier: '联想集团', items: 'ThinkCentre 台式机', quantity: 30, unitPrice: '¥5,800', totalAmount: '¥174,000', status: '已完成', orderDate: '2024-01-08', deliveryDate: '2024-01-18', progress: 100 }
+                { id: 'PO2024001', supplier: '阿里云计算有限公司', items: 'ECS通用型 2核4GB VPS', quantity: 50, unitPrice: '¥89/月', totalAmount: '¥4,450/月', status: '已确认', orderDate: '2024-01-15', deliveryDate: '2024-01-25', progress: 75, duration: '12个月', region: '华东1(杭州)' },
+                { id: 'PO2024002', supplier: '腾讯云计算有限公司', items: '标准型 4核8GB VPS', quantity: 30, unitPrice: '¥168/月', totalAmount: '¥5,040/月', status: '处理中', orderDate: '2024-01-18', deliveryDate: '2024-01-28', progress: 45, duration: '6个月', region: '华南1(深圳)' },
+                { id: 'PO2024003', supplier: 'Amazon Web Services', items: 'EC2 t3.medium实例', quantity: 20, unitPrice: '$33.41/月', totalAmount: '$668.2/月', status: '待审批', orderDate: '2024-01-20', deliveryDate: '2024-02-05', progress: 20, duration: '24个月', region: 'ap-southeast-1' },
+                { id: 'PO2024004', supplier: '华为云服务', items: '通用计算型 2核4GB VPS', quantity: 25, unitPrice: '¥128/月', totalAmount: '¥3,200/月', status: '已发货', orderDate: '2024-01-12', deliveryDate: '2024-01-22', progress: 90, duration: '12个月', region: '华北1(北京)' },
+                { id: 'PO2024005', supplier: 'Microsoft Azure', items: 'Standard B2s实例', quantity: 15, unitPrice: '$30.66/月', totalAmount: '$459.9/月', status: '已完成', orderDate: '2024-01-08', deliveryDate: '2024-01-18', progress: 100, duration: '12个月', region: 'East Asia' },
+                { id: 'PO2024006', supplier: '百度智能云', items: '通用型 1核2GB VPS', quantity: 40, unitPrice: '¥65/月', totalAmount: '¥2,600/月', status: '已确认', orderDate: '2024-01-22', deliveryDate: '2024-02-01', progress: 60, duration: '6个月', region: '华北-北京' },
+                { id: 'PO2024007', supplier: 'DigitalOcean', items: 'Droplet 1核1GB VPS', quantity: 35, unitPrice: '$6/月', totalAmount: '$210/月', status: '处理中', orderDate: '2024-01-24', deliveryDate: '2024-02-03', progress: 30, duration: '12个月', region: 'Singapore' }
             ]
         },
         // Planning 模块
@@ -218,11 +240,12 @@ function getModuleData(moduleId) {
             title: '采购计划',
             icon: 'fas fa-calendar-alt',
             data: [
-                { id: 'PLAN001', planName: '2024年Q1 IT设备采购计划', category: 'IT设备', budget: '¥3,500,000', allocated: '¥2,800,000', remaining: '¥700,000', status: '执行中', startDate: '2024-01-01', endDate: '2024-03-31', progress: 80, items: 15 },
-                { id: 'PLAN002', planName: '办公用品年度采购计划', category: '办公用品', budget: '¥800,000', allocated: '¥320,000', remaining: '¥480,000', status: '计划中', startDate: '2024-02-01', endDate: '2024-12-31', progress: 40, items: 25 },
-                { id: 'PLAN003', planName: '工业原料季度采购计划', category: '工业原料', budget: '¥2,200,000', allocated: '¥1,650,000', remaining: '¥550,000', status: '执行中', startDate: '2024-01-15', endDate: '2024-04-15', progress: 75, items: 12 },
-                { id: 'PLAN004', planName: '设备维护采购计划', category: '维护服务', budget: '¥1,500,000', allocated: '¥900,000', remaining: '¥600,000', status: '执行中', startDate: '2023-12-01', endDate: '2024-06-01', progress: 60, items: 8 },
-                { id: 'PLAN005', planName: '安全防护用品采购计划', category: '安全用品', budget: '¥600,000', allocated: '¥150,000', remaining: '¥450,000', status: '待审批', startDate: '2024-03-01', endDate: '2024-08-31', progress: 25, items: 20 }
+                { id: 'PLAN001', planName: '2024年Q1云基础设施扩容计划', category: 'VPS云服务器', budget: '¥180,000', allocated: '¥144,000', remaining: '¥36,000', status: '执行中', startDate: '2024-01-01', endDate: '2024-03-31', progress: 80, items: 15, expectedSavings: '15%' },
+                { id: 'PLAN002', planName: '国际业务VPS部署计划', category: '海外VPS', budget: '$25,000', allocated: '$10,000', remaining: '$15,000', status: '计划中', startDate: '2024-02-01', endDate: '2024-12-31', progress: 40, items: 25, expectedSavings: '20%' },
+                { id: 'PLAN003', planName: '开发环境VPS采购计划', category: '开发测试环境', budget: '¥45,000', allocated: '¥33,750', remaining: '¥11,250', status: '执行中', startDate: '2024-01-15', endDate: '2024-04-15', progress: 75, items: 12, expectedSavings: '10%' },
+                { id: 'PLAN004', planName: 'GPU云服务器采购计划', category: '高性能计算', budget: '¥320,000', allocated: '¥192,000', remaining: '¥128,000', status: '执行中', startDate: '2023-12-01', endDate: '2024-06-01', progress: 60, items: 8, expectedSavings: '25%' },
+                { id: 'PLAN005', planName: '多地域灾备VPS计划', category: '灾备服务', budget: '¥150,000', allocated: '¥37,500', remaining: '¥112,500', status: '待审批', startDate: '2024-03-01', endDate: '2024-08-31', progress: 25, items: 20, expectedSavings: '18%' },
+                { id: 'PLAN006', planName: '边缘节点VPS部署计划', category: '边缘计算', budget: '¥95,000', allocated: '¥0', remaining: '¥95,000', status: '计划中', startDate: '2024-07-01', endDate: '2024-12-31', progress: 0, items: 18, expectedSavings: '12%' }
             ]
         },
         'supplier-catalog': {
@@ -860,18 +883,20 @@ function initSpendChart() {
     new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['原材料', '设备采购', '服务外包', '办公用品', '物流运输'],
+            labels: ['云服务器VPS', 'GPU计算实例', '存储服务', '网络带宽', '安全防护', '监控运维'],
             datasets: [{
-                data: [45, 20, 15, 10, 10],
+                data: [35, 25, 15, 12, 8, 5],
                 backgroundColor: [
-                    '#3498db',
-                    '#2ecc71',
-                    '#f1c40f',
-                    '#e74c3c',
-                    '#9b59b6'
+                    '#4299e1',
+                    '#38b2ac',
+                    '#48bb78',
+                    '#ed8936',
+                    '#f56565',
+                    '#9f7aea'
                 ],
-                borderWidth: 2,
-                hoverBorderWidth: 3
+                borderWidth: 3,
+                hoverBorderWidth: 4,
+                borderColor: '#ffffff'
             }]
         },
         options: {
@@ -882,10 +907,19 @@ function initSpendChart() {
                     position: 'right',
                     labels: {
                         padding: 20,
-                        usePointStyle: true
+                        usePointStyle: true,
+                        font: {
+                            size: 12,
+                            weight: '500'
+                        }
                     }
                 },
                 tooltip: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    titleColor: '#ffffff',
+                    bodyColor: '#ffffff',
+                    borderColor: '#4299e1',
+                    borderWidth: 1,
                     callbacks: {
                         label: function(context) {
                             return context.label + ': ' + context.parsed + '%';
@@ -895,8 +929,10 @@ function initSpendChart() {
             },
             animation: {
                 animateRotate: true,
-                duration: 1000
-            }
+                duration: 1200,
+                easing: 'easeOutQuart'
+            },
+            cutout: '60%'
         }
     });
 }
@@ -912,26 +948,26 @@ function initStatusChart() {
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['待审批', '处理中', '已发货', '已完成', '已取消'],
+            labels: ['配置中', '部署中', '运行中', '已交付', '已暂停'],
             datasets: [{
-                label: '订单数量',
-                data: [25, 40, 30, 50, 5],
+                label: 'VPS实例数量',
+                data: [32, 58, 145, 89, 12],
                 backgroundColor: [
-                    '#f39c12',
-                    '#3498db',
-                    '#2ecc71',
-                    '#27ae60',
-                    '#e74c3c'
+                    '#ed8936',
+                    '#4299e1',
+                    '#48bb78',
+                    '#38b2ac',
+                    '#f56565'
                 ],
                 borderColor: [
-                    '#e67e22',
-                    '#2980b9',
-                    '#27ae60',
-                    '#229954',
-                    '#c0392b'
+                    '#dd6b20',
+                    '#3182ce',
+                    '#38a169',
+                    '#319795',
+                    '#e53e3e'
                 ],
                 borderWidth: 2,
-                borderRadius: 4
+                borderRadius: 6
             }]
         },
         options: {
@@ -944,7 +980,7 @@ function initStatusChart() {
                 tooltip: {
                     callbacks: {
                         label: function(context) {
-                            return context.dataset.label + ': ' + context.parsed.y + ' 个订单';
+                            return context.dataset.label + ': ' + context.parsed.y + ' 个实例';
                         }
                     }
                 }
@@ -989,10 +1025,10 @@ function initTrendChart() {
         data: {
             labels: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月'],
             datasets: [{
-                label: '采购金额 (万元)',
-                data: [120, 135, 128, 145, 152, 148, 165, 158],
-                borderColor: '#3498db',
-                backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                label: 'VPS采购支出 (万元)',
+                data: [185, 220, 195, 245, 285, 268, 315, 298],
+                borderColor: '#4299e1',
+                backgroundColor: 'rgba(66, 153, 225, 0.1)',
                 borderWidth: 3,
                 fill: true,
                 tension: 0.4,
@@ -1002,10 +1038,10 @@ function initTrendChart() {
                 pointRadius: 6,
                 pointHoverRadius: 8
             }, {
-                label: '节约金额 (万元)',
-                data: [8, 12, 10, 15, 18, 14, 22, 20],
-                borderColor: '#2ecc71',
-                backgroundColor: 'rgba(46, 204, 113, 0.1)',
+                label: '成本节约 (万元)',
+                data: [15, 25, 18, 32, 42, 35, 48, 45],
+                borderColor: '#48bb78',
+                backgroundColor: 'rgba(72, 187, 120, 0.1)',
                 borderWidth: 3,
                 fill: true,
                 tension: 0.4,
@@ -1154,24 +1190,24 @@ function initInventoryChart() {
     new Chart(ctx, {
         type: 'polarArea',
         data: {
-            labels: ['正常库存', '低库存预警', '紧急补货', '过量库存', '待入库'],
+            labels: ['运行正常', '资源预警', '性能告警', '维护中', '待部署'],
             datasets: [{
-                data: [45, 25, 15, 10, 5],
+                data: [52, 18, 12, 8, 10],
                 backgroundColor: [
-                    'rgba(46, 204, 113, 0.8)',
-                    'rgba(243, 156, 18, 0.8)',
-                    'rgba(231, 76, 60, 0.8)',
-                    'rgba(155, 89, 182, 0.8)',
-                    'rgba(52, 152, 219, 0.8)'
+                    'rgba(72, 187, 120, 0.8)',
+                    'rgba(237, 137, 54, 0.8)',
+                    'rgba(245, 101, 101, 0.8)',
+                    'rgba(159, 122, 234, 0.8)',
+                    'rgba(66, 153, 225, 0.8)'
                 ],
                 borderColor: [
-                    '#27ae60',
-                    '#e67e22',
-                    '#c0392b',
-                    '#8e44ad',
-                    '#2980b9'
+                    '#48bb78',
+                    '#ed8936',
+                    '#f56565',
+                    '#9f7aea',
+                    '#4299e1'
                 ],
-                borderWidth: 2
+                borderWidth: 3
             }]
         },
         options: {
