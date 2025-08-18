@@ -1215,7 +1215,7 @@ const i18nConfig = {
         
         // Chart Trend
         'chart.trend.vps_expenditure': {
-            en: 'VPS Procurement Expenditure (10K)',
+            en: 'VPS Smart Procurement System Expenditure (10K)',
             zh: 'VPS采购支出 (万元)',
             ja: 'VPS調達支出 (万元)',
             ko: 'VPS 조달 지출 (만원)',

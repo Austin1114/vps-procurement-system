@@ -1479,7 +1479,41 @@ body {
     }
 }
 
-/* 首页iframe样式 */
+/* 首页iframe垂直居中优化 */
+#home {
+    padding: 0;
+    margin: -2rem;
+    margin-top: -1rem;
+    margin-bottom: -4rem;
+    overflow: hidden;
+    height: calc(100vh - 60px + 4rem);
+}
+
+#home iframe {
+    width: calc(100% + 4rem);
+    height: calc(100vh - 60px + 6rem);
+    border: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    background: #fff;
+    transform: translateY(10px); /* 向下微调10px */
+}
+
+/* 完全移除所有间距 */
+.content:has(#home:not(.hidden)) {
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+    height: calc(100vh - 60px);
+}
+
+/* 确保main-content高度填满 */
+.main-content:has(.content #home:not(.hidden)) {
+    height: calc(100vh - 60px);
+    overflow: hidden;
+}
+
 .section-container iframe {
     background: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -1497,10 +1531,6 @@ body {
 
 .section-container:not(.hidden) {
     display: block;
-}
-
-#home {
-    display: block; /* 首页默认显示 */
 }
 
 #home.hidden {
