@@ -604,6 +604,16 @@ const i18nConfig = {
             es: 'Gestionar relaciones y rendimiento de proveedores',
             ar: 'إدارة علاقات وأداء الموردين'
         },
+        'module.performance_evaluation': {
+            en: 'Performance Evaluation',
+            zh: '绩效评估',
+            ja: 'パフォーマンス評価',
+            ko: '성과 평가',
+            fr: 'Évaluation des Performances',
+            de: 'Leistungsbewertung',
+            es: 'Evaluación de Rendimiento',
+            ar: 'تقييم الأداء'
+        },
         'module.performance_evaluation_desc': {
             en: 'Evaluate supplier and procurement performance',
             zh: '评估供应商和采购绩效',
@@ -614,6 +624,16 @@ const i18nConfig = {
             es: 'Evaluar el rendimiento de proveedores y adquisiciones',
             ar: 'تقييم أداء الموردين والمشتريات'
         },
+        'module.contract_management': {
+            en: 'Contract Management',
+            zh: '合同管理',
+            ja: '契約管理',
+            ko: '계약 관리',
+            fr: 'Gestion des Contrats',
+            de: 'Vertragsmanagement',
+            es: 'Gestión de Contratos',
+            ar: 'إدارة العقود'
+        },
         'module.contract_management_desc': {
             en: 'Manage procurement contracts and terms',
             zh: '管理采购合同和条款',
@@ -623,6 +643,16 @@ const i18nConfig = {
             de: 'Beschaffungsverträge und -bedingungen verwalten',
             es: 'Gestionar contratos y términos de adquisiciones',
             ar: 'إدارة عقود وشروط المشتريات'
+        },
+        'module.order_processing': {
+            en: 'Order Processing',
+            zh: '订单处理',
+            ja: '注文処理',
+            ko: '주문 처리',
+            fr: 'Traitement des Commandes',
+            de: 'Auftragsbearbeitung',
+            es: 'Procesamiento de Órdenes',
+            ar: 'معالجة الطلبات'
         },
         'module.order_processing_desc': {
             en: 'Process and track purchase orders',
