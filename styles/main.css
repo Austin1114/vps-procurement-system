@@ -1490,11 +1490,19 @@ body {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* 确保首页部分默认隐藏 */
-#home {
+/* 确保首页默认显示，其他页面隐藏 */
+.section-container {
     display: none;
 }
 
-#home.active {
+.section-container:not(.hidden) {
     display: block;
+}
+
+#home {
+    display: block; /* 首页默认显示 */
+}
+
+#home.hidden {
+    display: none;
 }
