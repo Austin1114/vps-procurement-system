@@ -162,11 +162,18 @@ function setupNavigation() {
             this.classList.add('active');
             
             // Hide all sections
-            sections.forEach(section => section.classList.add('hidden'));
+            sections.forEach(section => {
+                section.classList.add('hidden');
+                section.classList.remove('active');
+            });
             
             // Show the selected section
             const sectionId = this.getAttribute('data-section');
-            document.getElementById(sectionId).classList.remove('hidden');
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+                targetSection.classList.add('active');
+            }
         });
     });
 }

@@ -64,6 +64,16 @@ const i18nConfig = {
             es: 'Sistema de Adquisiciones Inteligentes VPS',
             ar: 'نظام الشراء الذكي VPS'
         },
+        'nav.home': {
+            en: 'Home',
+            zh: '首页',
+            ja: 'ホーム',
+            ko: '홈',
+            fr: 'Accueil',
+            de: 'Startseite',
+            es: 'Inicio',
+            ar: 'الرئيسية'
+        },
         'nav.dashboard': {
             en: 'Dashboard',
             zh: '仪表板',

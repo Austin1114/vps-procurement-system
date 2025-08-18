@@ -1478,3 +1478,23 @@ body {
         max-height: 200px;
     }
 }
+
+/* 首页iframe样式 */
+.section-container iframe {
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.section-container iframe:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* 确保首页部分默认隐藏 */
+#home {
+    display: none;
+}
+
+#home.active {
+    display: block;
+}
