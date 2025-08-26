@@ -73,6 +73,7 @@ body {
     display: flex;
     align-items: center;
     cursor: pointer;
+    gap: 1rem;
 }
 
 .user-name {
@@ -91,7 +92,7 @@ body {
     font-size: 0.8rem;
 }
 
-/* Language Switcher Styles */
+/* Language Switcher Styles - Updated for right positioning */
 .language-switcher {
     position: relative;
     display: flex;
@@ -104,14 +105,14 @@ body {
     color: white;
     border: 1px solid var(--border-color);
     border-radius: 6px;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
     cursor: pointer;
     transition: var(--transition);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    min-width: 120px;
+    gap: 0.4rem;
+    min-width: 100px;
     justify-content: space-between;
 }
 
@@ -128,7 +129,6 @@ body {
 .language-dropdown {
     position: absolute;
     top: 100%;
-    left: 0;
     right: 0;
     background-color: var(--secondary-color);
     border: 1px solid var(--border-color);
@@ -137,6 +137,7 @@ body {
     z-index: 1000;
     margin-top: 0.25rem;
     overflow: hidden;
+    min-width: 150px;
 }
 
 .language-dropdown.hidden {

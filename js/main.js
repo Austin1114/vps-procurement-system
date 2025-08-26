@@ -73,11 +73,27 @@ function setupLanguageSwitcher() {
             
             // Reinitialize charts with new language
             reinitializeCharts();
+            
+            // 新增：通知iframe切换语言
+            notifyIframeLanguageChange(selectedLanguage);
         });
     });
     
     // Initialize button text
     updateLanguageButtonText(i18n.getCurrentLanguage());
+}
+
+/**
+ * 通知iframe切换语言
+ */
+function notifyIframeLanguageChange(language) {
+    const homeIframe = document.querySelector('#home iframe');
+    if (homeIframe && homeIframe.contentWindow) {
+        homeIframe.contentWindow.postMessage({
+            type: 'LANGUAGE_CHANGE',
+            language: language
+        }, '*');
+    }
 }
 
 /**
