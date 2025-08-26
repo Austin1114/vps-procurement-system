@@ -1092,6 +1092,234 @@ const i18nConfig = {
             ar: 'فيسبوك'
         },
         
+        // 博客分类翻译
+        'blog.category.all': {
+            en: 'All',
+            zh: '全部',
+            ja: 'すべて',
+            ko: '전체',
+            fr: 'Tout',
+            de: 'Alle',
+            es: 'Todo',
+            ar: 'الكل'
+        },
+        'blog.category.news': {
+            en: 'News',
+            zh: '新闻',
+            ja: 'ニュース',
+            ko: '뉴스',
+            fr: 'Actualités',
+            de: 'Nachrichten',
+            es: 'Noticias',
+            ar: 'الأخبار'
+        },
+        'blog.category.lifestyle': {
+            en: 'Lifestyle',
+            zh: '生活方式',
+            ja: 'ライフスタイル',
+            ko: '라이프스타일',
+            fr: 'Style de Vie',
+            de: 'Lebensstil',
+            es: 'Estilo de Vida',
+            ar: 'نمط الحياة'
+        },
+        'blog.category.ai_tools': {
+            en: 'AI Tools',
+            zh: 'AI工具',
+            ja: 'AIツール',
+            ko: 'AI 도구',
+            fr: 'Outils IA',
+            de: 'KI-Tools',
+            es: 'Herramientas IA',
+            ar: 'أدوات الذكاء الاصطناعي'
+        },
+        'blog.category.guides': {
+            en: 'Guides',
+            zh: '指南',
+            ja: 'ガイド',
+            ko: '가이드',
+            fr: 'Guides',
+            de: 'Anleitungen',
+            es: 'Guías',
+            ar: 'الأدلة'
+        },
+        
+        // 博客文章翻译
+        'blog.article.supply_chain.title': {
+            en: 'Supply Chain Innovation',
+            zh: '供应链创新',
+            ja: 'サプライチェーンイノベーション',
+            ko: '공급망 혁신',
+            fr: 'Innovation de la Chaîne d\'Approvisionnement',
+            de: 'Lieferketten-Innovation',
+            es: 'Innovación en la Cadena de Suministro',
+            ar: 'ابتكار سلسلة التوريد'
+        },
+        'blog.article.supply_chain.desc': {
+            en: 'Latest innovations in supply chain management and their impact on procurement efficiency.',
+            zh: '供应链管理的最新创新及其对采购效率的影响。',
+            ja: 'サプライチェーン管理の最新イノベーションと調達効率への影響。',
+            ko: '공급망 관리의 최신 혁신과 조달 효율성에 미치는 영향.',
+            fr: 'Les dernières innovations en gestion de la chaîne d\'approvisionnement et leur impact sur l\'efficacité des achats.',
+            de: 'Neueste Innovationen im Lieferkettenmanagement und ihre Auswirkungen auf die Beschaffungseffizienz.',
+            es: 'Últimas innovaciones en gestión de la cadena de suministro y su impacto en la eficiencia de adquisiciones.',
+            ar: 'أحدث الابتكارات في إدارة سلسلة التوريد وتأثيرها على كفاءة المشتريات.'
+        },
+        'blog.article.work_life.title': {
+            en: 'Work-Life Balance in Procurement',
+            zh: '采购工作中的工作生活平衡',
+            ja: '調達における仕事と生活のバランス',
+            ko: '조달 업무의 일과 삶의 균형',
+            fr: 'Équilibre Travail-Vie dans les Achats',
+            de: 'Work-Life-Balance in der Beschaffung',
+            es: 'Equilibrio Trabajo-Vida en Adquisiciones',
+            ar: 'التوازن بين العمل والحياة في المشتريات'
+        },
+        'blog.article.work_life.desc': {
+            en: 'Tips and strategies for maintaining healthy work-life balance in demanding procurement roles.',
+            zh: '在要求严格的采购岗位中保持健康工作生活平衡的技巧和策略。',
+            ja: '要求の厳しい調達職において健康的なワークライフバランスを維持するためのヒントと戦略。',
+            ko: '까다로운 조달 역할에서 건강한 일과 삶의 균형을 유지하기 위한 팁과 전략.',
+            fr: 'Conseils et stratégies pour maintenir un équilibre travail-vie sain dans les rôles d\'achat exigeants.',
+            de: 'Tipps und Strategien zur Aufrechterhaltung einer gesunden Work-Life-Balance in anspruchsvollen Beschaffungsrollen.',
+            es: 'Consejos y estrategias para mantener un equilibrio trabajo-vida saludable en roles de adquisiciones exigentes.',
+            ar: 'نصائح واستراتيجيات للحفاظ على توازن صحي بين العمل والحياة في أدوار المشتريات المتطلبة.'
+        },
+        'blog.article.ai_analytics.title': {
+            en: 'Advanced AI Analytics Dashboard',
+            zh: '高级AI分析仪表板',
+            ja: '高度なAI分析ダッシュボード',
+            ko: '고급 AI 분석 대시보드',
+            fr: 'Tableau de Bord d\'Analyse IA Avancé',
+            de: 'Erweiterte KI-Analyse-Dashboard',
+            es: 'Panel de Análisis de IA Avanzado',
+            ar: 'لوحة تحليلات الذكاء الاصطناعي المتقدمة'
+        },
+        'blog.article.ai_analytics.desc': {
+            en: 'Explore our new AI-powered analytics dashboard for real-time procurement insights and predictive analysis.',
+            zh: '探索我们新的AI驱动分析仪表板，获取实时采购洞察和预测分析。',
+            ja: 'リアルタイムの調達インサイトと予測分析のための新しいAI駆動分析ダッシュボードをご覧ください。',
+            ko: '실시간 조달 통찰력과 예측 분석을 위한 새로운 AI 기반 분석 대시보드를 탐색하세요.',
+            fr: 'Explorez notre nouveau tableau de bord d\'analyse alimenté par l\'IA pour des insights d\'approvisionnement en temps réel et une analyse prédictive.',
+            de: 'Erkunden Sie unser neues KI-gestütztes Analyse-Dashboard für Echtzeit-Beschaffungseinblicke und prädiktive Analysen.',
+            es: 'Explore nuestro nuevo panel de análisis impulsado por IA para insights de adquisiciones en tiempo real y análisis predictivo.',
+            ar: 'استكشف لوحة التحليلات الجديدة المدعومة بالذكاء الاصطناعي للحصول على رؤى المشتريات في الوقت الفعلي والتحليل التنبؤي.'
+        },
+        'blog.article.procurement_guide.title': {
+            en: 'Complete Procurement Setup Guide',
+            zh: '完整采购设置指南',
+            ja: '完全な調達セットアップガイド',
+            ko: '완전한 조달 설정 가이드',
+            fr: 'Guide Complet de Configuration des Achats',
+            de: 'Vollständiger Beschaffungs-Setup-Leitfaden',
+            es: 'Guía Completa de Configuración de Adquisiciones',
+            ar: 'دليل إعداد المشتريات الكامل'
+        },
+        'blog.article.procurement_guide.desc': {
+            en: 'Step-by-step guide to setting up an efficient procurement system for your organization.',
+            zh: '为您的组织建立高效采购系统的分步指南。',
+            ja: '組織のための効率的な調達システムの設定に関するステップバイステップガイド。',
+            ko: '조직을 위한 효율적인 조달 시스템 설정에 대한 단계별 가이드.',
+            fr: 'Guide étape par étape pour mettre en place un système d\'approvisionnement efficace pour votre organisation.',
+            de: 'Schritt-für-Schritt-Anleitung zur Einrichtung eines effizienten Beschaffungssystems für Ihre Organisation.',
+            es: 'Guía paso a paso para configurar un sistema de adquisiciones eficiente para su organización.',
+            ar: 'دليل خطوة بخطوة لإعداد نظام مشتريات فعال لمؤسستك.'
+        },
+        
+        // 文章操作按钮翻译
+        'blog.action.share': {
+            en: 'Share',
+            zh: '分享',
+            ja: '共有',
+            ko: '공유',
+            fr: 'Partager',
+            de: 'Teilen',
+            es: 'Compartir',
+            ar: 'مشاركة'
+        },
+        'blog.action.bookmark': {
+            en: 'Bookmark',
+            zh: '收藏',
+            ja: 'ブックマーク',
+            ko: '북마크',
+            fr: 'Marquer',
+            de: 'Lesezeichen',
+            es: 'Marcar',
+            ar: 'إشارة مرجعية'
+        },
+        'blog.action.read_more': {
+            en: 'Read More',
+            zh: '阅读更多',
+            ja: '続きを読む',
+            ko: '더 읽기',
+            fr: 'Lire Plus',
+            de: 'Mehr Lesen',
+            es: 'Leer Más',
+            ar: 'اقرأ المزيد'
+        },
+        'blog.meta.read_time': {
+            en: 'min read',
+            zh: '分钟阅读',
+            ja: '分で読める',
+            ko: '분 읽기',
+            fr: 'min de lecture',
+            de: 'Min. Lesezeit',
+            es: 'min de lectura',
+            ar: 'دقيقة قراءة'
+        },
+        
+        // 特色文章翻译
+        'blog.featured.title': {
+            en: 'Featured Articles',
+            zh: '精选文章',
+            ja: '注目記事',
+            ko: '주요 기사',
+            fr: 'Articles en Vedette',
+            de: 'Empfohlene Artikel',
+            es: 'Artículos Destacados',
+            ar: 'المقالات المميزة'
+        },
+        'blog.featured.ai_procurement.title': {
+            en: 'AI-Powered Procurement Analytics',
+            zh: 'AI驱动的采购分析',
+            ja: 'AI駆動調達分析',
+            ko: 'AI 기반 조달 분석',
+            fr: 'Analyse d\'Approvisionnement Alimentée par IA',
+            de: 'KI-gestützte Beschaffungsanalyse',
+            es: 'Análisis de Adquisiciones con IA',
+            ar: 'تحليل المشتريات بالذكاء الاصطناعي'
+        },
+        'blog.featured.ai_procurement.desc': {
+            en: 'Discover how artificial intelligence is revolutionizing procurement decisions with real-time market analysis and predictive insights.',
+            zh: '探索人工智能如何通过实时市场分析和预测洞察革命性地改变采购决策。',
+            ja: '人工知能がリアルタイム市場分析と予測洞察で調達決定を革命的に変える方法を発見してください。',
+            ko: '인공지능이 실시간 시장 분석과 예측 통찰력으로 조달 결정을 혁신하는 방법을 알아보세요.',
+            fr: 'Découvrez comment l\'intelligence artificielle révolutionne les décisions d\'approvisionnement avec l\'analyse de marché en temps réel et les insights prédictifs.',
+            de: 'Entdecken Sie, wie künstliche Intelligenz Beschaffungsentscheidungen mit Echtzeit-Marktanalyse und prädiktiven Einblicken revolutioniert.',
+            es: 'Descubre cómo la inteligencia artificial está revolucionando las decisiones de adquisiciones con análisis de mercado en tiempo real e insights predictivos.',
+            ar: 'اكتشف كيف يحدث الذكاء الاصطناعي ثورة في قرارات المشتريات من خلال تحليل السوق في الوقت الفعلي والرؤى التنبؤية.'
+        },
+        'blog.featured.market_trends.title': {
+            en: 'Global Market Trends 2024',
+            zh: '2024年全球市场趋势',
+            ja: '2024年グローバル市場トレンド',
+            ko: '2024년 글로벌 시장 동향',
+            fr: 'Tendances du Marché Mondial 2024',
+            de: 'Globale Markttrends 2024',
+            es: 'Tendencias del Mercado Global 2024',
+            ar: 'اتجاهات السوق العالمية 2024'
+        },
+        'blog.featured.market_trends.desc': {
+            en: 'Comprehensive analysis of emerging market trends and their impact on procurement strategies worldwide.',
+            zh: '对新兴市场趋势及其对全球采购策略影响的全面分析。',
+            ja: '新興市場トレンドと世界的な調達戦略への影響の包括的分析。',
+            ko: '신흥 시장 동향과 전 세계 조달 전략에 미치는 영향에 대한 종합적 분석.',
+            fr: 'Analyse complète des tendances émergentes du marché et de leur impact sur les stratégies d\'approvisionnement mondiales.',
+            de: 'Umfassende Analyse aufkommender Markttrends und ihrer Auswirkungen auf weltweite Beschaffungsstrategien.',
+            es: 'Análisis integral de las tendencias emergentes del mercado y su impacto en las estrategias de adquisiciones a nivel mundial.',
+            ar: 'تحليل شامل لاتجاهات السوق الناشئة وتأثيرها على استراتيجيات المشتريات في جميع أنحاء العالم.'
+        },
+        
         // Common
         'module.details': {
             en: 'Module Details',
