@@ -134,6 +134,16 @@ const i18nConfig = {
             es: 'Finanzas',
             ar: 'المالية'
         },
+        'nav.blog': {
+            en: 'Blog',
+            zh: '博客',
+            ja: 'ブログ',
+            ko: '블로그',
+            fr: 'Blog',
+            de: 'Blog',
+            es: 'Blog',
+            ar: 'المدونة'
+        },
         
         // Welcome Banner
         'welcome.title': {
@@ -899,6 +909,86 @@ const i18nConfig = {
             de: 'Finanzzahlungen bearbeiten und verwalten',
             es: 'Procesar y gestionar pagos financieros',
             ar: 'معالجة وإدارة المدفوعات المالية'
+        },
+        'module.news': {
+            en: 'News',
+            zh: '新闻',
+            ja: 'ニュース',
+            ko: '뉴스',
+            fr: 'Actualités',
+            de: 'Nachrichten',
+            es: 'Noticias',
+            ar: 'الأخبار'
+        },
+        'module.news_desc': {
+            en: 'Latest industry news and updates',
+            zh: '最新行业新闻和更新',
+            ja: '最新の業界ニュースとアップデート',
+            ko: '최신 업계 뉴스 및 업데이트',
+            fr: 'Dernières nouvelles et mises à jour de l\'industrie',
+            de: 'Neueste Branchennachrichten und Updates',
+            es: 'Últimas noticias y actualizaciones de la industria',
+            ar: 'آخر أخبار الصناعة والتحديثات'
+        },
+        'module.lifestyle': {
+            en: 'Lifestyle',
+            zh: '生活方式',
+            ja: 'ライフスタイル',
+            ko: '라이프스타일',
+            fr: 'Style de Vie',
+            de: 'Lebensstil',
+            es: 'Estilo de Vida',
+            ar: 'نمط الحياة'
+        },
+        'module.lifestyle_desc': {
+            en: 'Lifestyle tips and work-life balance',
+            zh: '生活方式建议和工作生活平衡',
+            ja: 'ライフスタイルのヒントとワークライフバランス',
+            ko: '라이프스타일 팁과 일과 삶의 균형',
+            fr: 'Conseils de style de vie et équilibre travail-vie',
+            de: 'Lifestyle-Tipps und Work-Life-Balance',
+            es: 'Consejos de estilo de vida y equilibrio trabajo-vida',
+            ar: 'نصائح نمط الحياة وتوازن العمل والحياة'
+        },
+        'module.ai_tools': {
+            en: 'AI Tools',
+            zh: 'AI工具',
+            ja: 'AIツール',
+            ko: 'AI 도구',
+            fr: 'Outils IA',
+            de: 'KI-Tools',
+            es: 'Herramientas IA',
+            ar: 'أدوات الذكاء الاصطناعي'
+        },
+        'module.ai_tools_desc': {
+            en: 'Explore AI tools and technologies',
+            zh: '探索AI工具和技术',
+            ja: 'AIツールとテクノロジーを探索',
+            ko: 'AI 도구 및 기술 탐색',
+            fr: 'Explorer les outils et technologies IA',
+            de: 'KI-Tools und -Technologien erkunden',
+            es: 'Explorar herramientas y tecnologías de IA',
+            ar: 'استكشاف أدوات وتقنيات الذكاء الاصطناعي'
+        },
+        'module.guides': {
+            en: 'Guides',
+            zh: '指南',
+            ja: 'ガイド',
+            ko: '가이드',
+            fr: 'Guides',
+            de: 'Anleitungen',
+            es: 'Guías',
+            ar: 'الأدلة'
+        },
+        'module.guides_desc': {
+            en: 'Step-by-step guides and tutorials',
+            zh: '分步指南和教程',
+            ja: 'ステップバイステップガイドとチュートリアル',
+            ko: '단계별 가이드 및 튜토리얼',
+            fr: 'Guides étape par étape et tutoriels',
+            de: 'Schritt-für-Schritt-Anleitungen und Tutorials',
+            es: 'Guías paso a paso y tutoriales',
+            ar: 'أدلة خطوة بخطوة ودروس تعليمية'
         },
         
         // Common
