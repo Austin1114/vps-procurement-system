@@ -991,6 +991,107 @@ const i18nConfig = {
             ar: 'أدلة خطوة بخطوة ودروس تعليمية'
         },
         
+        'blog.title': {
+            en: 'Knowledge Hub',
+            zh: '知识中心',
+            ja: 'ナレッジハブ',
+            ko: '지식 허브',
+            fr: 'Centre de Connaissances',
+            de: 'Wissenszentrum',
+            es: 'Centro de Conocimiento',
+            ar: 'مركز المعرفة'
+        },
+        'blog.subtitle': {
+            en: 'Discover insights, trends, and innovations in procurement and technology',
+            zh: '探索采购和技术领域的洞察、趋势和创新',
+            ja: '調達とテクノロジーの洞察、トレンド、イノベーションを発見',
+            ko: '조달 및 기술 분야의 통찰력, 트렌드, 혁신을 발견하세요',
+            fr: 'Découvrez les insights, tendances et innovations en approvisionnement et technologie',
+            de: 'Entdecken Sie Einblicke, Trends und Innovationen in Beschaffung und Technologie',
+            es: 'Descubre insights, tendencias e innovaciones en adquisiciones y tecnología',
+            ar: 'اكتشف الرؤى والاتجاهات والابتكارات في المشتريات والتكنولوجيا'
+        },
+        'blog.search_placeholder': {
+            en: 'Search articles...',
+            zh: '搜索文章...',
+            ja: '記事を検索...',
+            ko: '기사 검색...',
+            fr: 'Rechercher des articles...',
+            de: 'Artikel suchen...',
+            es: 'Buscar artículos...',
+            ar: 'البحث في المقالات...'
+        },
+        'blog.sharing.title': {
+            en: 'Share Knowledge',
+            zh: '分享知识',
+            ja: '知識を共有',
+            ko: '지식 공유',
+            fr: 'Partager les Connaissances',
+            de: 'Wissen Teilen',
+            es: 'Compartir Conocimiento',
+            ar: 'مشاركة المعرفة'
+        },
+        'blog.sharing.subtitle': {
+            en: 'Connect with the procurement community and share insights',
+            zh: '与采购社区联系并分享见解',
+            ja: '調達コミュニティとつながり、洞察を共有',
+            ko: '조달 커뮤니티와 연결하고 통찰력을 공유하세요',
+            fr: 'Connectez-vous avec la communauté d\'approvisionnement et partagez des insights',
+            de: 'Verbinden Sie sich mit der Beschaffungsgemeinschaft und teilen Sie Einblicke',
+            es: 'Conéctate con la comunidad de adquisiciones y comparte insights',
+            ar: 'تواصل مع مجتمع المشتريات وشارك الرؤى'
+        },
+        'blog.sharing.dingtalk': {
+            zh: '钉钉',
+            en: 'DingTalk',
+            ja: 'DingTalk',
+            ko: '딩톡',
+            fr: 'DingTalk',
+            de: 'DingTalk',
+            es: 'DingTalk',
+            ar: 'DingTalk'
+        },
+        'blog.sharing.twitter': {
+            zh: 'Twitter',
+            en: 'Twitter', 
+            ja: 'Twitter',
+            ko: '트위터',
+            fr: 'Twitter',
+            de: 'Twitter',
+            es: 'Twitter',
+            ar: 'تويتر'
+        },
+        'blog.sharing.youtube': {
+            zh: 'YouTube',
+            en: 'YouTube',
+            ja: 'YouTube', 
+            ko: '유튜브',
+            fr: 'YouTube',
+            de: 'YouTube',
+            es: 'YouTube',
+            ar: 'يوتيوب'
+        },
+        'blog.sharing.instagram': {
+            zh: 'Instagram',
+            en: 'Instagram',
+            ja: 'Instagram',
+            ko: '인스타그램', 
+            fr: 'Instagram',
+            de: 'Instagram',
+            es: 'Instagram',
+            ar: 'إنستغرام'
+        },
+        'blog.sharing.facebook': {
+            zh: 'Facebook',
+            en: 'Facebook',
+            ja: 'Facebook',
+            ko: '페이스북',
+            fr: 'Facebook', 
+            de: 'Facebook',
+            es: 'Facebook',
+            ar: 'فيسبوك'
+        },
+        
         // Common
         'module.details': {
             en: 'Module Details',

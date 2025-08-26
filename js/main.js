@@ -1468,6 +1468,95 @@ function initSavingsChart() {
     });
 }
 
+// 分享到各个平台的函数
+function shareToApp(platform) {
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent('VPS智慧采购系统 - 博客分享');
+    const description = encodeURIComponent('发现采购和技术领域的见解、趋势和创新');
+    
+    let shareUrl = '';
+    
+    switch(platform) {
+        case 'dingtalk':
+            // 钉钉分享 - 打开钉钉应用或网页版
+            shareUrl = `dingtalk://dingtalkclient/action/sendmsg?msgtype=link&url=${url}&title=${title}&text=${description}`;
+            // 如果钉钉应用未安装，则跳转到网页版
+            window.open(shareUrl, '_blank');
+            setTimeout(() => {
+                window.open(`https://im.dingtalk.com/`, '_blank');
+            }, 1000);
+            break;
+            
+        case 'twitter':
+            shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title} - ${description}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+            break;
+            
+        case 'youtube':
+            // YouTube没有直接分享链接的API，跳转到YouTube主页
+            shareUrl = `https://www.youtube.com/`;
+            window.open(shareUrl, '_blank');
+            // 可以考虑复制链接到剪贴板
+            copyToClipboard(window.location.href);
+            showNotification('链接已复制到剪贴板，您可以在YouTube上分享');
+            break;
+            
+        case 'instagram':
+            // Instagram没有网页分享API，跳转到Instagram主页
+            shareUrl = `https://www.instagram.com/`;
+            window.open(shareUrl, '_blank');
+            copyToClipboard(window.location.href);
+            showNotification('链接已复制到剪贴板，您可以在Instagram上分享');
+            break;
+            
+        case 'facebook':
+            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${title}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+            break;
+    }
+}
+
+// 复制到剪贴板函数
+function copyToClipboard(text) {
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(text);
+    } else {
+        // 兼容旧浏览器
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+    }
+}
+
+// 显示通知函数
+function showNotification(message) {
+    // 创建通知元素
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.textContent = message;
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 4px;
+        z-index: 1000;
+        animation: slideIn 0.3s ease;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // 3秒后自动移除
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+}
+
 /**
  * Setup AI Assistant functionality
  */

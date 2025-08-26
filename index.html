@@ -342,72 +342,163 @@
                 </div>
 
                 <div class="section-container hidden" id="blog">
-                    <div class="module-grid">
-                        <div class="module-card" id="news">
-                            <div class="module-icon"><i class="fas fa-newspaper"></i></div>
-                            <h3 data-i18n="module.news">News</h3>
-                            <p data-i18n="module.news_desc">Latest industry news and updates</p>
-                            <div class="ai-tag" data-i18n="ai.enhanced">AI Enhanced</div>
+                    <!-- 博客头部区域 -->
+                    <div class="blog-header">
+                        <div class="blog-title-section">
+                            <h2 data-i18n="blog.title">Knowledge Hub</h2>
+                            <p data-i18n="blog.subtitle">Discover insights, trends, and innovations in procurement and technology</p>
                         </div>
-                        <div class="module-card" id="lifestyle">
-                            <div class="module-icon"><i class="fas fa-heart"></i></div>
-                            <h3 data-i18n="module.lifestyle">Lifestyle</h3>
-                            <p data-i18n="module.lifestyle_desc">Lifestyle tips and work-life balance</p>
+                        <div class="blog-search">
+                            <div class="search-container">
+                                <i class="fas fa-search"></i>
+                                <input type="text" data-i18n="blog.search_placeholder" placeholder="Search articles...">
+                            </div>
                         </div>
-                        <div class="module-card" id="ai-tools">
-                            <div class="module-icon"><i class="fas fa-robot"></i></div>
-                            <h3 data-i18n="module.ai_tools">AI Tools</h3>
-                            <p data-i18n="module.ai_tools_desc">Explore AI tools and technologies</p>
-                            <div class="ai-tag" data-i18n="ai.enhanced">AI Enhanced</div>
+                    </div>
+
+                    <!-- 博客分类导航 -->
+                    <div class="blog-categories">
+                        <div class="category-tabs">
+                            <button class="category-tab active" data-category="all" data-i18n="blog.category.all">All</button>
+                            <button class="category-tab" data-category="news" data-i18n="blog.category.news">News</button>
+                            <button class="category-tab" data-category="lifestyle" data-i18n="blog.category.lifestyle">Lifestyle</button>
+                            <button class="category-tab" data-category="ai-tools" data-i18n="blog.category.ai_tools">AI Tools</button>
+                            <button class="category-tab" data-category="guides" data-i18n="blog.category.guides">Guides</button>
                         </div>
-                        <div class="module-card" id="guides">
-                            <div class="module-icon"><i class="fas fa-book-open"></i></div>
-                            <h3 data-i18n="module.guides">Guides</h3>
-                            <p data-i18n="module.guides_desc">Step-by-step guides and tutorials</p>
+                    </div>
+
+                    <!-- 特色文章区域 -->
+                    <div class="featured-articles">
+                        <h3 data-i18n="blog.featured.title">Featured Articles</h3>
+                        <div class="featured-grid">
+                            <div class="featured-article">
+                                <div class="article-image">
+                                    <div class="article-category">AI Tools</div>
+                                    <div class="article-badge ai-enhanced" data-i18n="ai.enhanced">AI Enhanced</div>
+                                </div>
+                                <div class="article-content">
+                                    <h4 data-i18n="blog.featured.ai_procurement.title">AI-Powered Procurement Analytics</h4>
+                                    <p data-i18n="blog.featured.ai_procurement.desc">Discover how artificial intelligence is revolutionizing procurement decisions with real-time market analysis and predictive insights.</p>
+                                    <div class="article-meta">
+                                        <span class="article-date">2024-01-15</span>
+                                        <span class="article-read-time">5 min read</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="featured-article">
+                                <div class="article-image">
+                                    <div class="article-category">News</div>
+                                </div>
+                                <div class="article-content">
+                                    <h4 data-i18n="blog.featured.market_trends.title">Global Market Trends 2024</h4>
+                                    <p data-i18n="blog.featured.market_trends.desc">Comprehensive analysis of emerging market trends and their impact on procurement strategies worldwide.</p>
+                                    <div class="article-meta">
+                                        <span class="article-date">2024-01-12</span>
+                                        <span class="article-read-time">8 min read</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 博客文章网格 -->
+                    <div class="blog-articles-grid">
+                        <div class="article-card" data-category="news">
+                            <div class="article-header">
+                                <div class="article-category-tag news">News</div>
+                                <div class="article-date">Jan 10, 2024</div>
+                            </div>
+                            <h4 data-i18n="blog.article.supply_chain.title">Supply Chain Innovation</h4>
+                            <p data-i18n="blog.article.supply_chain.desc">Latest innovations in supply chain management and their impact on procurement efficiency.</p>
+                            <div class="article-footer">
+                                <span class="read-time">6 min read</span>
+                                <div class="article-actions">
+                                    <button class="btn-share"><i class="fas fa-share-alt"></i></button>
+                                    <button class="btn-bookmark"><i class="fas fa-bookmark"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="article-card" data-category="lifestyle">
+                            <div class="article-header">
+                                <div class="article-category-tag lifestyle">Lifestyle</div>
+                                <div class="article-date">Jan 08, 2024</div>
+                            </div>
+                            <h4 data-i18n="blog.article.work_life.title">Work-Life Balance in Procurement</h4>
+                            <p data-i18n="blog.article.work_life.desc">Tips and strategies for maintaining healthy work-life balance in demanding procurement roles.</p>
+                            <div class="article-footer">
+                                <span class="read-time">4 min read</span>
+                                <div class="article-actions">
+                                    <button class="btn-share"><i class="fas fa-share-alt"></i></button>
+                                    <button class="btn-bookmark"><i class="fas fa-bookmark"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="article-card" data-category="ai-tools">
+                            <div class="article-header">
+                                <div class="article-category-tag ai-tools">AI Tools</div>
+                                <div class="article-date">Jan 05, 2024</div>
+                                <div class="ai-badge" data-i18n="ai.enhanced">AI Enhanced</div>
+                            </div>
+                            <h4 data-i18n="blog.article.ai_analytics.title">Advanced AI Analytics Dashboard</h4>
+                            <p data-i18n="blog.article.ai_analytics.desc">Explore our new AI-powered analytics dashboard for real-time procurement insights and predictive analysis.</p>
+                            <div class="article-footer">
+                                <span class="read-time">7 min read</span>
+                                <div class="article-actions">
+                                    <button class="btn-share"><i class="fas fa-share-alt"></i></button>
+                                    <button class="btn-bookmark"><i class="fas fa-bookmark"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="article-card" data-category="guides">
+                            <div class="article-header">
+                                <div class="article-category-tag guides">Guides</div>
+                                <div class="article-date">Jan 03, 2024</div>
+                            </div>
+                            <h4 data-i18n="blog.article.procurement_guide.title">Complete Procurement Setup Guide</h4>
+                            <p data-i18n="blog.article.procurement_guide.desc">Step-by-step guide to setting up an efficient procurement system for your organization.</p>
+                            <div class="article-footer">
+                                <span class="read-time">12 min read</span>
+                                <div class="article-actions">
+                                    <button class="btn-share"><i class="fas fa-share-alt"></i></button>
+                                    <button class="btn-bookmark"><i class="fas fa-bookmark"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 博客分享功能 -->
+                    <div class="blog-sharing-section">
+                        <h3 data-i18n="blog.sharing.title">Share Knowledge</h3>
+                        <p data-i18n="blog.sharing.subtitle">Connect with the procurement community and share insights</p>
+                        <div class="sharing-options">
+                            <button class="share-btn dingtalk" onclick="shareToApp('dingtalk')">
+                                <i class="fab fa-dingtalk"></i>
+                                <span data-i18n="blog.sharing.dingtalk">钉钉</span>
+                            </button>
+                            <button class="share-btn twitter" onclick="shareToApp('twitter')">
+                                <i class="fab fa-twitter"></i>
+                                <span data-i18n="blog.sharing.twitter">Twitter</span>
+                            </button>
+                            <button class="share-btn youtube" onclick="shareToApp('youtube')">
+                                <i class="fab fa-youtube"></i>
+                                <span data-i18n="blog.sharing.youtube">YouTube</span>
+                            </button>
+                            <button class="share-btn instagram" onclick="shareToApp('instagram')">
+                                <i class="fab fa-instagram"></i>
+                                <span data-i18n="blog.sharing.instagram">Instagram</span>
+                            </button>
+                            <button class="share-btn facebook" onclick="shareToApp('facebook')">
+                                <i class="fab fa-facebook"></i>
+                                <span data-i18n="blog.sharing.facebook">Facebook</span>
+                            </button>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- AI Assistant Dialog -->
-    <div id="ai-assistant-dialog" class="ai-assistant-dialog hidden">
-        <div class="ai-assistant-header">
-            <div class="ai-assistant-title">
-                <i class="fas fa-robot"></i>
-                <h3 data-i18n="ai.assistant">AI Assistant</h3>
-            </div>
-            <button id="ai-assistant-close" class="ai-assistant-close">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="ai-assistant-content">
-            <div class="ai-assistant-messages" id="ai-assistant-messages">
-                <div class="ai-message">
-                    <div class="ai-message-content">
-                        <p data-i18n="ai.greeting">Hello! I'm your AI procurement assistant. How can I help you today?</p>
-                        <p data-i18n="ai.capabilities">You can ask me to:</p>
-                        <ul>
-                            <li data-i18n="ai.capability.requisition">Create a purchase requisition</li>
-                            <li data-i18n="ai.capability.inventory">Check inventory for specific materials</li>
-                            <li data-i18n="ai.capability.cost">Look up cost information for materials</li>
-                            <li data-i18n="ai.capability.supplier">Find supplier information</li>
-                            <li data-i18n="ai.capability.tracking">Track order status</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="ai-assistant-input">
-                <input type="text" id="ai-assistant-input" data-i18n="ai.input_placeholder" placeholder="Type your request here...">
-                <button id="ai-assistant-send">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- 使用本地JS文件，避免CDN加载问题 -->
-    <script src="js/main.js"></script>
+                <!-- 使用本地JS文件，避免CDN加载问题 -->
+                <script src="js/main.js"></script>
 </body>
 </html>
