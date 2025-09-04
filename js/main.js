@@ -130,6 +130,12 @@ function initApp() {
     
     // Setup AI insight actions
     setupInsightActions();
+    
+    // Setup blog category functionality
+    setupBlogCategories();
+    
+    // Setup blog publish functionality
+    setupBlogPublish();
 }
 
 /**
@@ -1555,6 +1561,291 @@ function showNotification(message) {
     setTimeout(() => {
         notification.remove();
     }, 3000);
+}
+
+/**
+ * Setup blog category filtering functionality
+ */
+function setupBlogCategories() {
+    const categoryTabs = document.querySelectorAll('.category-tab');
+    const articleCards = document.querySelectorAll('.article-card');
+    
+    categoryTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Remove active class from all tabs
+            categoryTabs.forEach(t => t.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            this.classList.add('active');
+            
+            // Get selected category
+            const selectedCategory = this.getAttribute('data-category');
+            
+            // Filter articles
+            filterArticlesByCategory(selectedCategory);
+        });
+    });
+}
+
+/**
+ * Filter articles by category
+ * @param {string} category - The category to filter by
+ */
+function filterArticlesByCategory(category) {
+    const articleCards = document.querySelectorAll('.article-card');
+    
+    articleCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        
+        if (category === 'all' || cardCategory === category) {
+            card.style.display = 'block';
+            card.style.animation = 'fadeIn 0.3s ease';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+    
+    // Add fade-in animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    `;
+    
+    if (!document.querySelector('style[data-blog-animation]')) {
+        style.setAttribute('data-blog-animation', 'true');
+        document.head.appendChild(style);
+    }
+}
+
+/**
+ * Setup blog publish functionality
+ */
+function setupBlogPublish() {
+    const publishForm = document.getElementById('publishForm');
+    if (publishForm) {
+        publishForm.addEventListener('submit', handlePublishSubmit);
+    }
+}
+
+/**
+ * Open publish modal
+ */
+function openPublishModal() {
+    const modal = document.getElementById('publishModal');
+    if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+/**
+ * Close publish modal
+ */
+function closePublishModal() {
+    const modal = document.getElementById('publishModal');
+    if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+        resetPublishForm();
+    }
+}
+
+/**
+ * Reset publish form
+ */
+function resetPublishForm() {
+    const form = document.getElementById('publishForm');
+    if (form) {
+        form.reset();
+        document.getElementById('articleContent').innerHTML = '';
+    }
+}
+
+/**
+ * Handle publish form submission
+ */
+function handlePublishSubmit(e) {
+    e.preventDefault();
+    
+    const formData = {
+        title: document.getElementById('articleTitle').value,
+        category: document.getElementById('articleCategory').value,
+        tags: document.getElementById('articleTags').value.split(',').map(tag => tag.trim()),
+        summary: document.getElementById('articleSummary').value,
+        content: document.getElementById('articleContent').innerHTML,
+        publishDate: new Date().toISOString(),
+        status: 'published'
+    };
+    
+    // 保存文章
+    saveArticle(formData);
+    
+    // 获取选中的分享平台
+    const sharePlatforms = getSelectedSharePlatforms();
+    
+    // 分享到选中的平台
+    if (sharePlatforms.length > 0) {
+        shareToMultiplePlatforms(formData, sharePlatforms);
+    }
+    
+    // 显示成功消息
+    showNotification('文章发布成功！');
+    
+    // 关闭模态框
+    closePublishModal();
+    
+    // 刷新文章列表
+    refreshArticleList();
+}
+
+/**
+ * Save article to local storage
+ */
+function saveArticle(articleData) {
+    let articles = JSON.parse(localStorage.getItem('blog_articles') || '[]');
+    
+    articleData.id = Date.now().toString();
+    articles.unshift(articleData);
+    
+    localStorage.setItem('blog_articles', JSON.stringify(articles));
+}
+
+/**
+ * Save article as draft
+ */
+function saveDraft() {
+    const formData = {
+        title: document.getElementById('articleTitle').value,
+        category: document.getElementById('articleCategory').value,
+        tags: document.getElementById('articleTags').value.split(',').map(tag => tag.trim()),
+        summary: document.getElementById('articleSummary').value,
+        content: document.getElementById('articleContent').innerHTML,
+        publishDate: new Date().toISOString(),
+        status: 'draft'
+    };
+    
+    saveArticle(formData);
+    showNotification('草稿保存成功！');
+}
+
+/**
+ * Preview article
+ */
+function previewArticle() {
+    const title = document.getElementById('articleTitle').value;
+    const content = document.getElementById('articleContent').innerHTML;
+    const summary = document.getElementById('articleSummary').value;
+    
+    const previewHTML = `
+        <h1>${title}</h1>
+        <p class="article-summary"><em>${summary}</em></p>
+        <div class="article-body">${content}</div>
+    `;
+    
+    document.getElementById('previewContent').innerHTML = previewHTML;
+    document.getElementById('previewModal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+/**
+ * Close preview modal
+ */
+function closePreviewModal() {
+    document.getElementById('previewModal').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+}
+
+/**
+ * Get selected share platforms
+ */
+function getSelectedSharePlatforms() {
+    const platforms = [];
+    const checkboxes = document.querySelectorAll('.share-checkboxes input[type="checkbox"]:checked');
+    
+    checkboxes.forEach(checkbox => {
+        platforms.push(checkbox.value);
+    });
+    
+    return platforms;
+}
+
+/**
+ * Share to multiple platforms
+ */
+function shareToMultiplePlatforms(articleData, platforms) {
+    platforms.forEach(platform => {
+        shareToSpecificPlatform(articleData, platform);
+    });
+}
+
+/**
+ * Share to specific platform
+ */
+function shareToSpecificPlatform(articleData, platform) {
+    const shareText = `${articleData.title} - ${articleData.summary}`;
+    const shareUrl = window.location.href; // 实际应用中应该是文章的具体URL
+    
+    switch(platform) {
+        case 'wechat':
+            // 微信分享（实际需要微信SDK）
+            copyToClipboard(`${shareText} ${shareUrl}`);
+            showNotification('内容已复制到剪贴板，可在微信中粘贴分享');
+            break;
+            
+        case 'weibo':
+            // 微博分享
+            const weiboUrl = `https://service.weibo.com/share/share.php?url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(shareText)}`;
+            window.open(weiboUrl, '_blank');
+            break;
+            
+        case 'twitter':
+            // Twitter分享
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+            window.open(twitterUrl, '_blank');
+            break;
+            
+        case 'linkedin':
+            // LinkedIn分享
+            const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+            window.open(linkedinUrl, '_blank');
+            break;
+    }
+}
+
+/**
+ * Rich text editor functions
+ */
+function formatText(command) {
+    document.execCommand(command, false, null);
+    document.getElementById('articleContent').focus();
+}
+
+function insertLink() {
+    const url = prompt('请输入链接地址:');
+    if (url) {
+        document.execCommand('createLink', false, url);
+    }
+    document.getElementById('articleContent').focus();
+}
+
+function insertImage() {
+    const url = prompt('请输入图片地址:');
+    if (url) {
+        document.execCommand('insertImage', false, url);
+    }
+    document.getElementById('articleContent').focus();
+}
+
+/**
+ * Refresh article list
+ */
+function refreshArticleList() {
+    // 这里可以实现刷新文章列表的逻辑
+    // 从localStorage读取文章并更新显示
+    console.log('Refreshing article list...');
 }
 
 /**

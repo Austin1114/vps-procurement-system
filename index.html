@@ -348,14 +348,19 @@
                             <h2 data-i18n="blog.title">Knowledge Hub</h2>
                             <p data-i18n="blog.subtitle">Discover insights, trends, and innovations in procurement and technology</p>
                         </div>
-                        <div class="blog-search">
-                            <div class="search-container">
-                                <i class="fas fa-search"></i>
-                                <input type="text" data-i18n="blog.search_placeholder" placeholder="Search articles...">
+                        <div class="blog-actions">
+                            <div class="blog-search">
+                                <div class="search-container">
+                                    <i class="fas fa-search"></i>
+                                    <input type="text" data-i18n="blog.search_placeholder" placeholder="Search articles...">
+                                </div>
                             </div>
+                            <button class="btn-publish-article" onclick="openPublishModal()">
+                                <i class="fas fa-plus"></i>
+                                <span data-i18n="blog.publish.button">发布文章</span>
+                            </button>
                         </div>
                     </div>
-
                     <!-- 博客分类导航 -->
                     <div class="blog-categories">
                         <div class="category-tabs">
@@ -500,5 +505,124 @@
 
                 <!-- 使用本地JS文件，避免CDN加载问题 -->
                 <script src="js/main.js"></script>
+
+                <!-- 文章发布模态框 -->
+                <div id="publishModal" class="publish-modal hidden">
+                    <div class="modal-overlay" onclick="closePublishModal()"></div>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 data-i18n="blog.publish.title">发布新文章</h3>
+                            <button class="modal-close" onclick="closePublishModal()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        
+                        <form id="publishForm" class="publish-form">
+                            <div class="form-group">
+                                <label data-i18n="blog.publish.article_title">文章标题</label>
+                                <input type="text" id="articleTitle" required placeholder="请输入文章标题">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label data-i18n="blog.publish.category">分类</label>
+                                <select id="articleCategory" required>
+                                    <option value="" data-i18n="blog.publish.select_category">选择分类</option>
+                                    <option value="news" data-i18n="blog.category.news">News</option>
+                                    <option value="lifestyle" data-i18n="blog.category.lifestyle">Lifestyle</option>
+                                    <option value="ai-tools" data-i18n="blog.category.ai_tools">AI Tools</option>
+                                    <option value="guides" data-i18n="blog.category.guides">Guides</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label data-i18n="blog.publish.tags">标签</label>
+                                <input type="text" id="articleTags" placeholder="用逗号分隔多个标签">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label data-i18n="blog.publish.summary">文章摘要</label>
+                                <textarea id="articleSummary" rows="3" placeholder="请输入文章摘要"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label data-i18n="blog.publish.content">文章内容</label>
+                                <div class="editor-toolbar">
+                                    <button type="button" class="editor-btn" onclick="formatText('bold')">
+                                        <i class="fas fa-bold"></i>
+                                    </button>
+                                    <button type="button" class="editor-btn" onclick="formatText('italic')">
+                                        <i class="fas fa-italic"></i>
+                                    </button>
+                                    <button type="button" class="editor-btn" onclick="formatText('underline')">
+                                        <i class="fas fa-underline"></i>
+                                    </button>
+                                    <button type="button" class="editor-btn" onclick="insertLink()">
+                                        <i class="fas fa-link"></i>
+                                    </button>
+                                    <button type="button" class="editor-btn" onclick="insertImage()">
+                                        <i class="fas fa-image"></i>
+                                    </button>
+                                </div>
+                                <div id="articleContent" class="rich-editor" contenteditable="true" placeholder="开始写作..."></div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <div class="action-buttons">
+                                    <button type="button" class="btn-secondary" onclick="saveDraft()">
+                                        <i class="fas fa-save"></i>
+                                        <span data-i18n="blog.publish.save_draft">保存草稿</span>
+                                    </button>
+                                    <button type="button" class="btn-secondary" onclick="previewArticle()">
+                                        <i class="fas fa-eye"></i>
+                                        <span data-i18n="blog.publish.preview">预览</span>
+                                    </button>
+                                    <button type="submit" class="btn-primary">
+                                        <i class="fas fa-paper-plane"></i>
+                                        <span data-i18n="blog.publish.publish">发布文章</span>
+                                    </button>
+                                </div>
+                                
+                                <div class="share-options">
+                                    <label data-i18n="blog.publish.share_to">同时分享到：</label>
+                                    <div class="share-checkboxes">
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" id="shareWeChat" value="wechat">
+                                            <i class="fab fa-weixin"></i>
+                                            <span>微信</span>
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" id="shareWeibo" value="weibo">
+                                            <i class="fab fa-weibo"></i>
+                                            <span>微博</span>
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" id="shareTwitter" value="twitter">
+                                            <i class="fab fa-twitter"></i>
+                                            <span>Twitter</span>
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" id="shareLinkedIn" value="linkedin">
+                                            <i class="fab fa-linkedin"></i>
+                                            <span>LinkedIn</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- 文章预览模态框 -->
+                    <div id="previewModal" class="preview-modal hidden">
+                        <div class="modal-overlay" onclick="closePreviewModal()"></div>
+                        <div class="modal-content preview-content">
+                            <div class="modal-header">
+                                <h3 data-i18n="blog.preview.title">文章预览</h3>
+                                <button class="modal-close" onclick="closePreviewModal()">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div id="previewContent" class="preview-article"></div>
+                        </div>
+                    </div>
 </body>
 </html>

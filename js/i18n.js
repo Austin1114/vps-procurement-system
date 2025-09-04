@@ -1268,6 +1268,138 @@ const i18nConfig = {
             ar: 'دقيقة قراءة'
         },
         
+        // 博客发布功能翻译
+        'blog.publish.button': {
+            en: 'Publish Article',
+            zh: '发布文章',
+            ja: '記事を投稿',
+            ko: '기사 게시',
+            fr: 'Publier un Article',
+            de: 'Artikel Veröffentlichen',
+            es: 'Publicar Artículo',
+            ar: 'نشر مقال'
+        },
+        'blog.publish.title': {
+            en: 'Publish New Article',
+            zh: '发布新文章',
+            ja: '新しい記事を投稿',
+            ko: '새 기사 게시',
+            fr: 'Publier un Nouvel Article',
+            de: 'Neuen Artikel Veröffentlichen',
+            es: 'Publicar Nuevo Artículo',
+            ar: 'نشر مقال جديد'
+        },
+        'blog.publish.article_title': {
+            en: 'Article Title',
+            zh: '文章标题',
+            ja: '記事のタイトル',
+            ko: '기사 제목',
+            fr: 'Titre de l\'Article',
+            de: 'Artikel Titel',
+            es: 'Título del Artículo',
+            ar: 'عنوان المقال'
+        },
+        'blog.publish.category': {
+            en: 'Category',
+            zh: '分类',
+            ja: 'カテゴリー',
+            ko: '카테고리',
+            fr: 'Catégorie',
+            de: 'Kategorie',
+            es: 'Categoría',
+            ar: 'الفئة'
+        },
+        'blog.publish.select_category': {
+            en: 'Select Category',
+            zh: '选择分类',
+            ja: 'カテゴリーを選択',
+            ko: '카테고리 선택',
+            fr: 'Sélectionner une Catégorie',
+            de: 'Kategorie Auswählen',
+            es: 'Seleccionar Categoría',
+            ar: 'اختر الفئة'
+        },
+        'blog.publish.tags': {
+            en: 'Tags',
+            zh: '标签',
+            ja: 'タグ',
+            ko: '태그',
+            fr: 'Étiquettes',
+            de: 'Tags',
+            es: 'Etiquetas',
+            ar: 'العلامات'
+        },
+        'blog.publish.summary': {
+            en: 'Article Summary',
+            zh: '文章摘要',
+            ja: '記事の要約',
+            ko: '기사 요약',
+            fr: 'Résumé de l\'Article',
+            de: 'Artikel Zusammenfassung',
+            es: 'Resumen del Artículo',
+            ar: 'ملخص المقال'
+        },
+        'blog.publish.content': {
+            en: 'Article Content',
+            zh: '文章内容',
+            ja: '記事の内容',
+            ko: '기사 내용',
+            fr: 'Contenu de l\'Article',
+            de: 'Artikel Inhalt',
+            es: 'Contenido del Artículo',
+            ar: 'محتوى المقال'
+        },
+        'blog.publish.save_draft': {
+            en: 'Save Draft',
+            zh: '保存草稿',
+            ja: '下書きを保存',
+            ko: '초안 저장',
+            fr: 'Sauvegarder le Brouillon',
+            de: 'Entwurf Speichern',
+            es: 'Guardar Borrador',
+            ar: 'حفظ المسودة'
+        },
+        'blog.publish.preview': {
+            en: 'Preview',
+            zh: '预览',
+            ja: 'プレビュー',
+            ko: '미리보기',
+            fr: 'Aperçu',
+            de: 'Vorschau',
+            es: 'Vista Previa',
+            ar: 'معاينة'
+        },
+        'blog.publish.publish': {
+            en: 'Publish Article',
+            zh: '发布文章',
+            ja: '記事を投稿',
+            ko: '기사 게시',
+            fr: 'Publier l\'Article',
+            de: 'Artikel Veröffentlichen',
+            es: 'Publicar Artículo',
+            ar: 'نشر المقال'
+        },
+        'blog.publish.share_to': {
+            en: 'Share to:',
+            zh: '同时分享到：',
+            ja: '共有先：',
+            ko: '공유 대상：',
+            fr: 'Partager sur：',
+            de: 'Teilen auf：',
+            es: 'Compartir en：',
+            ar: 'مشاركة على：'
+        },
+        'blog.preview.title': {
+            en: 'Article Preview',
+            zh: '文章预览',
+            ja: '記事のプレビュー',
+            ko: '기사 미리보기',
+            fr: 'Aperçu de l\'Article',
+            de: 'Artikel Vorschau',
+            es: 'Vista Previa del Artículo',
+            ar: 'معاينة المقال'
+        },
+        
         // 特色文章翻译
         'blog.featured.title': {
             en: 'Featured Articles',
