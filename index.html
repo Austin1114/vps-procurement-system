@@ -624,5 +624,34 @@
                             <div id="previewContent" class="preview-article"></div>
                         </div>
                     </div>
+                    </div>
+                    
+                    <!-- AI Assistant Dialog -->
+                    <div id="ai-assistant-dialog" class="ai-assistant-dialog hidden">
+                        <div class="ai-assistant-header">
+                            <div class="ai-assistant-title">
+                                <i class="fas fa-robot"></i>
+                                <h3 data-i18n="ai.assistant">AI助手</h3>
+                            </div>
+                            <button id="ai-assistant-close" class="ai-assistant-close">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="ai-assistant-content">
+                            <div id="ai-assistant-messages" class="ai-assistant-messages">
+                                <div class="ai-message">
+                                    <div class="ai-message-content">
+                                        <p data-i18n="ai.greeting">您好！我是您的AI采购助手。今天我能为您做些什么？</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ai-assistant-input">
+                                <input type="text" id="ai-assistant-input" placeholder="在此输入您的请求..." data-i18n-placeholder="ai.input_placeholder">
+                                <button id="ai-assistant-send">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
 </body>
 </html>
